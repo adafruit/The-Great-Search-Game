@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4i2t8puiux0"]
+
+[ext_resource type="Script" path="res://Scripts/mho.gd" id="1_325wf"]
+[ext_resource type="Texture2D" uid="uid://bac0687vaft15" path="res://Assests/mho_80x80.png" id="2_wganc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d315"]
+size = Vector2(71, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_325wf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wganc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_7d315")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx8f44a8g8xpk"]
+
+[ext_resource type="Texture2D" uid="uid://cxqnhrxdck4w1" path="res://Assests/Tiles/Tiles.png" id="1_lxhg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s268a"]
+size = Vector2(64, 14)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 1)
+texture = ExtResource("1_lxhg3")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s268a")
+one_way_collision = true
