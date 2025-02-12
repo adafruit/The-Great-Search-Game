@@ -16,3 +16,5 @@ texture = ExtResource("2_wganc")
 visibility_layer = 2
 position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_7d315")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
