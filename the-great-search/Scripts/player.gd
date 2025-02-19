@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 170.0
@@ -35,7 +36,9 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * delta
 			
 	if Input.is_action_just_pressed("jump"):
+		
 		if is_on_floor():
+			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
 		elif is_on_wall_state:
 			wall_jump()
@@ -66,6 +69,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("wall_latch")
 		elif velocity.y < 0:
 			animated_sprite.play("jump")
+			
 		else:
 			animated_sprite.play("falling")
 	
