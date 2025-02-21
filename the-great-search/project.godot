@@ -15,6 +15,12 @@ run/main_scene="res://Scenes/main_root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/stretch/scale=2.0
+
 [input]
 
 jump={

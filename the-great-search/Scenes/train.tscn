@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2cdl5x2kv124"]
+
+[ext_resource type="Texture2D" uid="uid://dm6li3sh5tijk" path="res://Assests/Tiles/TRAIN.png" id="1_wb5j5"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wb5j5")

@@ -92,7 +92,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,10 +118,10 @@ size = Vector2(23.3094, 26.0208)
 script = ExtResource("1_eglwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -20)
-scale = Vector2(0.71, 0.71)
+position = Vector2(6, -17)
+scale = Vector2(0.69375, 0.69375)
 sprite_frames = SubResource("SpriteFrames_86jci")
-animation = &"falling"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -134,3 +134,5 @@ shape = SubResource("RectangleShape2D_wxdcs")
 stream = ExtResource("20_ht7sn")
 volume_db = -30.838
 pitch_scale = 1.03
+
+[node name="KillTimer" type="Timer" parent="."]
