@@ -19,6 +19,7 @@ var movement_input_monitoring = Vector2(true, true)
 
 func _ready() -> void:
 	Engine.time_scale = 1.0 
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("slow_time"):
@@ -94,3 +95,4 @@ func input_pause_reset(time):
 func toggle_time_slow() -> void:
 	time_slowed = !time_slowed
 	Engine.time_scale = SLOW_TIME_SCALE if time_slowed else 1.0
+	
