@@ -1,9 +1,9 @@
 extends CharacterBody2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var kill_timer: Timer = $KillTimer
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-const SPEED = 190.0
+
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const WALL_SLIDE_SPEED = 100.0
 const SLOW_TIME_SCALE = 0.5
@@ -16,6 +16,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var wall_jump_direction = 1
 var time_slowed = false
 var movement_input_monitoring = Vector2(true, true)  
+
+var used_jump = false  # Tracks if player has used their jump
+var bounced_recently = false # Tracks if player bounced recently off a jump item
+var bounce_grace_time = 0.1  # Time in seconds where bounce detection remains active
 
 func _ready() -> void:
 	Engine.time_scale = 1.0 

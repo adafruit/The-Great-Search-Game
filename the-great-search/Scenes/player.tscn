@@ -118,8 +118,8 @@ size = Vector2(23.3094, 26.0208)
 script = ExtResource("1_eglwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -17)
-scale = Vector2(0.69375, 0.69375)
+position = Vector2(0.328124, -14.3281)
+scale = Vector2(0.593437, 0.593437)
 sprite_frames = SubResource("SpriteFrames_86jci")
 animation = &"run"
 autoplay = "idle"
