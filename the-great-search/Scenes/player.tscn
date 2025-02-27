@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://brbogp2ycbsun"]
+[gd_scene load_steps=24 format=3 uid="uid://brbogp2ycbsun"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_eglwb"]
 [ext_resource type="Texture2D" uid="uid://dvfrc41n33nna" path="res://Assests/Lady Ada Idle - No Shadow/frame_0_delay-0.1s.png" id="2_77xhb"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b6odufqsh5acy" path="res://Assests/Lady Ada Run - No Shadow/frame_6_delay-0.1s.png" id="20_f1nt3"]
 [ext_resource type="AudioStream" uid="uid://b6jxwv7i82u63" path="res://Assests/SFX/jump.wav" id="20_ht7sn"]
 [ext_resource type="Texture2D" uid="uid://bx3jskc4sdcqf" path="res://Assests/Lady Ada Run - No Shadow/frame_7_delay-0.1s.png" id="21_fn3j4"]
+[ext_resource type="PackedScene" uid="uid://bkgbrwtyanslq" path="res://Scenes/interacting_component.tscn" id="21_k3wjk"]
 [ext_resource type="Texture2D" uid="uid://veeyccml2vlh" path="res://Assests/ladyada_wall_latch_3.png" id="22_x4xa5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_86jci"]
@@ -115,6 +116,7 @@ animations = [{
 size = Vector2(23.3094, 26.0208)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.12, 1.13467)
 script = ExtResource("1_eglwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -136,3 +138,5 @@ volume_db = -30.838
 pitch_scale = 1.03
 
 [node name="KillTimer" type="Timer" parent="."]
+
+[node name="InteractingComponent" parent="." instance=ExtResource("21_k3wjk")]

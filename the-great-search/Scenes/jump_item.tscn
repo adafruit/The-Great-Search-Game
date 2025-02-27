@@ -99,6 +99,7 @@ animations = [{
 radius = 6.08276
 
 [node name="JumpItem" type="Area2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_qemmi")
 
 [node name="JumpItemAnimation" type="AnimatedSprite2D" parent="."]
