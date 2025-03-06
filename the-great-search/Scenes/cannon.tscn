@@ -1,0 +1,563 @@
+[gd_scene load_steps=26 format=3 uid="uid://rj1pcy2b4knw"]
+
+[ext_resource type="Script" path="res://Scenes/cannon.gd" id="1_iscyr"]
+[ext_resource type="Texture2D" uid="uid://cghhxf1faliiu" path="res://Assests/cannon/beamLight.png" id="2_6t3ye"]
+[ext_resource type="Texture2D" uid="uid://bcoo2pagw3c67" path="res://Assests/cannon/beam 1.png" id="2_uncb2"]
+[ext_resource type="Texture2D" uid="uid://bvibox2d26can" path="res://Assests/cannon/beam25.png" id="3_3iw0r"]
+[ext_resource type="Texture2D" uid="uid://c24yvlcili7r5" path="res://Assests/cannon/beam 2.png" id="4_abdss"]
+[ext_resource type="Texture2D" uid="uid://cq5mvbvft6tjq" path="res://Assests/cannon/beam 3.png" id="5_eafjb"]
+[ext_resource type="Texture2D" uid="uid://fss3fdxb16s3" path="res://Assests/cannon/beam 4.png" id="6_bjlpw"]
+[ext_resource type="Texture2D" uid="uid://dqtk07wqics1m" path="res://Assests/cannon/beam 5.png" id="7_hyueo"]
+[ext_resource type="Texture2D" uid="uid://clx752e7est4y" path="res://Assests/cannon/beam 6.png" id="8_4uj7m"]
+[ext_resource type="Texture2D" uid="uid://3yu2aeclwa8l" path="res://Assests/cannon/lightning 1.png" id="9_ay6ui"]
+[ext_resource type="Texture2D" uid="uid://c2xopihveejhk" path="res://Assests/cannon/lightning 2.png" id="10_qe106"]
+[ext_resource type="Texture2D" uid="uid://c208r2thik2op" path="res://Assests/cannon/lightning 3.png" id="11_k0byp"]
+[ext_resource type="Texture2D" uid="uid://cd4d2mhf6yekc" path="res://Assests/cannon/lightning 4.png" id="12_aleut"]
+[ext_resource type="Texture2D" uid="uid://cdbfgjxqw8v43" path="res://Assests/cannon/lightning 5.png" id="13_utfgw"]
+[ext_resource type="Texture2D" uid="uid://balnsqm4bfsvt" path="res://Assests/cannon/lightning 6.png" id="14_mownk"]
+[ext_resource type="PackedScene" uid="uid://dpcag8kva10k8" path="res://Scenes/killzone.tscn" id="16_1o7ih"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy56o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15bss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8witg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5ula"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruewt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdftu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vqxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqo4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"lightning",
+"speed": 18.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqepj"]
+size = Vector2(448, 17)
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_iscyr")
+timerLength = 4.42
+beginDelay = 1.58
+
+[node name="Position2D" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(32, -1)
+sprite_frames = SubResource("SpriteFrames_uy56o")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(96, -1)
+sprite_frames = SubResource("SpriteFrames_15bss")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(160, -1)
+sprite_frames = SubResource("SpriteFrames_8witg")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(224, -1)
+sprite_frames = SubResource("SpriteFrames_m5ula")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(288, -1)
+sprite_frames = SubResource("SpriteFrames_ruewt")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(352, -1)
+sprite_frames = SubResource("SpriteFrames_cdftu")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(480, -1)
+sprite_frames = SubResource("SpriteFrames_0vqxr")
+animation = &"lightning"
+frame = 5
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(416, -1)
+sprite_frames = SubResource("SpriteFrames_wqo4j")
+animation = &"lightning"
+frame = 5
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(224, 0)
+shape = SubResource("RectangleShape2D_pqepj")
+disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Light2D" type="PointLight2D" parent="."]
+position = Vector2(224, 1)
+scale = Vector2(3.48, 0.599998)
+color = Color(1, 0.25098, 1, 1)
+energy = 0.0
+texture = ExtResource("2_6t3ye")
+
+[node name="startDelay" type="Timer" parent="."]
+
+[node name="damageTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="lightningTimer" type="Timer" parent="."]
+wait_time = 3.295
+autostart = true
+
+[node name="Killzone" parent="." instance=ExtResource("16_1o7ih")]
+position = Vector2(38, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+
+[node name="CycleDelayTimer" type="Timer" parent="."]
+
+[node name="deathTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="startDelay" to="." method="_on_start_delay_timeout"]
+[connection signal="timeout" from="damageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="lightningTimer" to="." method="_on_lightning_timer_timeout"]
+[connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://mfvhfyhr6dhj"]
+
+[ext_resource type="Script" path="res://areaZoom.gd" id="1_3oie3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75enb"]
+size = Vector2(635, 397)
+
+[node name="zoomCameraArea" type="Area2D"]
+script = ExtResource("1_3oie3")
+metadata/_edit_horizontal_guides_ = [400.0, -104.0, -54.0]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(319.5, 199.5)
+shape = SubResource("RectangleShape2D_75enb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

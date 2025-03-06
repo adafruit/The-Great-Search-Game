@@ -140,3 +140,5 @@ pitch_scale = 1.03
 [node name="KillTimer" type="Timer" parent="."]
 
 [node name="InteractingComponent" parent="." instance=ExtResource("21_k3wjk")]
+position = Vector2(0, -14.101)
+scale = Vector2(0.499998, 0.442982)

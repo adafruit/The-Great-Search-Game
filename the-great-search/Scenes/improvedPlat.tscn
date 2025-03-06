@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://41nt62ras272"]
+
+[ext_resource type="Texture2D" uid="uid://cxqnhrxdck4w1" path="res://Assests/Tiles/Tiles.png" id="1_m3cys"]
+[ext_resource type="Script" path="res://Scenes/platformA.gd" id="1_vwrkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7ikw"]
+size = Vector2(64, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kplax"]
+size = Vector2(64, 20)
+
+[node name="PlatformA" type="AnimatableBody2D"]
+script = ExtResource("1_vwrkp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m3cys")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(32, 0)
+texture = ExtResource("1_m3cys")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_b7ikw")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ResetTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_kplax")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

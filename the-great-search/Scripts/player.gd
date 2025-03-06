@@ -8,11 +8,19 @@ const JUMP_VELOCITY = -400.0
 const WALL_SLIDE_SPEED = 100.0
 const SLOW_TIME_SCALE = 0.5
 
+var last_wall_normal = Vector2.ZERO
+var can_wall_jump = true
+var wall_jump_cooldown_timer = 0.0
+const WALL_JUMP_COOLDOWN = 0.5
+
+var has_double_jump = false
+var bounce_jump_available = false
+
 # Wall jump configuration
 const WALL_KICK_ANGLE = 60.0  
 var input_pause_after_wall_jump = 0.1
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1000         
 var wall_jump_direction = 1
 var time_slowed = false
 var movement_input_monitoring = Vector2(true, true)  
@@ -21,18 +29,40 @@ var used_jump = false  # Tracks if player has used their jump
 var bounced_recently = false # Tracks if player bounced recently off a jump item
 var bounce_grace_time = 0.1  # Time in seconds where bounce detection remains active
 
+var jump_buffer_time = 0.15  # Time in seconds to buffer a jump input
+var jump_buffer_timer = 0.0
+
+
 func _ready() -> void:
 	Engine.time_scale = 1.0 
 	add_to_group("player")
+	jump_buffer_timer = 0.0 
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("slow_time"):
 		toggle_time_slow()
 	
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+	
 	var direction := Input.get_axis("move_left", "move_right")
 	
 	# Wall check
 	var is_on_wall_state = is_on_wall() and not is_on_floor()
+	
+	if wall_jump_cooldown_timer > 0:
+			wall_jump_cooldown_timer -= delta
+			
+	if is_on_wall_state:
+		var current_wall_normal = get_wall_normal()
+		
+		if current_wall_normal != last_wall_normal and not current_wall_normal.is_zero_approx():
+			can_wall_jump = true
+			last_wall_normal = current_wall_normal
+	else:
+		if is_on_floor():
+			can_wall_jump = true
+			last_wall_normal = Vector2.ZERO
 	
 	if not is_on_floor():
 		if is_on_wall_state and direction != 0:
@@ -46,8 +76,25 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
-		elif is_on_wall_state:
+			
+		elif is_on_wall_state and can_wall_jump and wall_jump_cooldown_timer <= 0:
 			wall_jump()
+			can_wall_jump = false
+			wall_jump_cooldown_timer = WALL_JUMP_COOLDOWN
+			
+		elif bounce_jump_available:
+			audio_stream_player_2d.play()
+			velocity.y = JUMP_VELOCITY
+			bounce_jump_available = false
+			
+		elif has_double_jump:
+			# Regular double jump if available
+			audio_stream_player_2d.play()
+			velocity.y = JUMP_VELOCITY
+			has_double_jump = false
+			
+		else:
+			jump_buffer_timer = jump_buffer_time
 	
 	# Handle movement based on input monitoring
 	if direction and movement_input_monitoring == Vector2(true, true):
@@ -80,6 +127,28 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("falling")
 	
 	move_and_slide()
+	
+	if is_on_floor() and jump_buffer_timer > 0:
+		audio_stream_player_2d.play()
+		velocity.y = JUMP_VELOCITY
+		jump_buffer_timer = 0.0
+	
+	
+	if is_on_wall():
+		var current_wall_normal = get_wall_normal()
+		
+		if current_wall_normal != last_wall_normal and not current_wall_normal.is_zero_approx():
+			can_wall_jump = true
+			last_wall_normal = current_wall_normal
+			
+		else:
+			if is_on_floor():
+				can_wall_jump = true
+				last_wall_normal = Vector2.ZERO
+
+
+func handle_bounce():
+	bounce_jump_available = true
 
 func wall_jump():
 	var horizontal_wall_kick = abs(JUMP_VELOCITY * cos(WALL_KICK_ANGLE * (PI / 180)))
