@@ -3,6 +3,12 @@ extends CharacterBody2D
 @onready var kill_timer: Timer = $KillTimer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var interaction_area: InteractionArea = $InteractionArea
+
+const lines: Array[String] = [
+	"Hey There!"
+]
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const WALL_SLIDE_SPEED = 100.0
@@ -45,8 +51,15 @@ var was_on_floor = false
 
 func _ready() -> void:
 	Engine.time_scale = 1.0 
+	interaction_area.interact = Callable(self, "_on_interact")
 	add_to_group("player")
 	jump_buffer_timer = 0.0 
+
+func _on_interact():
+	DialogManager.start_dialog(global_position, lines)
+	#animated_sprite.flip_h = true if interaction_area.get_overlapping_bodies()[0].global_position.x < global_position.x else f
+	await DialogManager.dialog_finished
+	
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("slow_time"):

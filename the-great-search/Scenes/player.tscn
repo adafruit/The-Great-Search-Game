@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://brbogp2ycbsun"]
+[gd_scene load_steps=25 format=3 uid="uid://brbogp2ycbsun"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_eglwb"]
 [ext_resource type="Texture2D" uid="uid://dvfrc41n33nna" path="res://Assests/Lady Ada Idle - No Shadow/frame_0_delay-0.1s.png" id="2_77xhb"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b6odufqsh5acy" path="res://Assests/Lady Ada Run - No Shadow/frame_6_delay-0.1s.png" id="20_f1nt3"]
 [ext_resource type="AudioStream" uid="uid://b6jxwv7i82u63" path="res://Assests/SFX/jump.wav" id="20_ht7sn"]
 [ext_resource type="Texture2D" uid="uid://bx3jskc4sdcqf" path="res://Assests/Lady Ada Run - No Shadow/frame_7_delay-0.1s.png" id="21_fn3j4"]
-[ext_resource type="PackedScene" uid="uid://bkgbrwtyanslq" path="res://Scenes/interacting_component.tscn" id="21_k3wjk"]
+[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactable.tscn" id="21_xw4da"]
 [ext_resource type="Texture2D" uid="uid://veeyccml2vlh" path="res://Assests/ladyada_wall_latch_3.png" id="22_x4xa5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_86jci"]
@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -93,7 +93,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -115,15 +115,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxdcs"]
 size = Vector2(23.3094, 26.0208)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ygfo"]
+radius = 21.0032
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.12, 1.13467)
+collision_layer = 10
 script = ExtResource("1_eglwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.328124, -14.3281)
 scale = Vector2(0.593437, 0.593437)
 sprite_frames = SubResource("SpriteFrames_86jci")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -139,6 +143,8 @@ pitch_scale = 1.03
 
 [node name="KillTimer" type="Timer" parent="."]
 
-[node name="InteractingComponent" parent="." instance=ExtResource("21_k3wjk")]
-position = Vector2(0, -14.101)
-scale = Vector2(0.499998, 0.442982)
+[node name="InteractionArea" parent="." instance=ExtResource("21_xw4da")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(1.78571, -16.745)
+shape = SubResource("CircleShape2D_5ygfo")

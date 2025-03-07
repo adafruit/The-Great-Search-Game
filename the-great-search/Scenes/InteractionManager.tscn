@@ -1,20 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkgbrwtyanslq"]
 
-[ext_resource type="Script" path="res://Scenes/interacting_component.gd" id="1_jf345"]
-[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="1_svo6f"]
+[ext_resource type="Script" path="res://Scenes/InteractionManager.gd" id="1_kepc3"]
+[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_x7bgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fni04"]
 size = Vector2(145, 70)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qp5yn"]
-font = ExtResource("1_svo6f")
+font = ExtResource("2_x7bgp")
+font_size = 9
 
-[node name="InteractingComponent" type="Node2D"]
-script = ExtResource("1_jf345")
+[node name="InteractionManager" type="Node2D"]
+script = ExtResource("1_kepc3")
+action_name = "interact"
 
 [node name="InteractRange" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
 position = Vector2(-2.5, 0)
