@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://crdh43dhna0sp"]
+
+[ext_resource type="Texture2D" uid="uid://bngwy2k1w118s" path="res://Assests/adabotOTM.png" id="1_fp2o8"]
+[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactable.tscn" id="2_yvhfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm7sa"]
+size = Vector2(55, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngrn5"]
+size = Vector2(55, 59)
+
+[node name="EOTM" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_lm7sa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fp2o8")
+
+[node name="Interactable" parent="." instance=ExtResource("2_yvhfg")]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ngrn5")

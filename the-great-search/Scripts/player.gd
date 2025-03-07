@@ -20,17 +20,27 @@ var bounce_jump_available = false
 const WALL_KICK_ANGLE = 60.0  
 var input_pause_after_wall_jump = 0.1
 
-var gravity = 1000         
+
+#Gravity
+var gravity = 1200         
 var wall_jump_direction = 1
 var time_slowed = false
 var movement_input_monitoring = Vector2(true, true)  
 
+
+#For Jump Item State
 var used_jump = false  # Tracks if player has used their jump
 var bounced_recently = false # Tracks if player bounced recently off a jump item
 var bounce_grace_time = 0.1  # Time in seconds where bounce detection remains active
 
+#Jump Buffer Time
 var jump_buffer_time = 0.15  # Time in seconds to buffer a jump input
 var jump_buffer_timer = 0.0
+
+#Coyote Time
+var coyote_time = 0.1  # Adjustable window (0.1s is a good starting point)
+var coyote_timer = 0.0
+var was_on_floor = false
 
 
 func _ready() -> void:
@@ -63,6 +73,16 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			can_wall_jump = true
 			last_wall_normal = Vector2.ZERO
+
+	# Coyote time handling
+	if is_on_floor():
+		has_double_jump = true  # Reset double jump when on floor
+		was_on_floor = true
+		coyote_timer = coyote_time
+	elif was_on_floor:
+		coyote_timer -= delta
+		if coyote_timer <= 0:
+			was_on_floor = false
 	
 	if not is_on_floor():
 		if is_on_wall_state and direction != 0:
@@ -72,11 +92,11 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * delta
 			
 	if Input.is_action_just_pressed("jump"):
-		
-		if is_on_floor():
+		if is_on_floor() or (was_on_floor and coyote_timer > 0):
 			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
-			
+			was_on_floor = false
+			coyote_timer = 0
 		elif is_on_wall_state and can_wall_jump and wall_jump_cooldown_timer <= 0:
 			wall_jump()
 			can_wall_jump = false
