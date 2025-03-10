@@ -19,7 +19,6 @@ shape = SubResource("RectangleShape2D_lm7sa")
 texture = ExtResource("1_fp2o8")
 
 [node name="Interactable" parent="." instance=ExtResource("2_yvhfg")]
-collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(0.5, 0.5)
