@@ -13,3 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_kill_timer_timeout() -> void:
 	print("Kiloamanjaro!")
 	queue_free()
+ 
