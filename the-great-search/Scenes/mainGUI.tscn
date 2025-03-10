@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdmdv6441vngl"]
+
+[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="1_avqwe"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1343.0
+offset_top = 75.0
+offset_right = 1855.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("1_avqwe")
+theme_override_font_sizes/font_size = 64
+text = "Coins: 0"
