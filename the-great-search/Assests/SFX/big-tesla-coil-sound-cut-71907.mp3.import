@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/big-tesla-coil-sound-cut-71907.mp3-8a1ea53088
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

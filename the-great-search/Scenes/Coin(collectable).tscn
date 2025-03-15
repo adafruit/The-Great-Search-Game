@@ -103,6 +103,8 @@ animations = [{
 [node name="Coin" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_m48sa")
+shake_amount = 0.5
+shake_duration = 0.12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -110,17 +112,17 @@ shape = SubResource("CapsuleShape2D_imeh5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_5qo7w")
-volume_db = 6.744
-pitch_scale = 2.1
-
-[node name="KillTimer" type="Timer" parent="AudioStreamPlayer2D"]
-wait_time = 1.998
-one_shot = true
+volume_db = 12.716
+area_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_qjqqb")
 autoplay = "default"
 
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="AudioStreamPlayer2D/KillTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

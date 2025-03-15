@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://djfs81tg2ut4l"]
+[gd_scene load_steps=24 format=3 uid="uid://djfs81tg2ut4l"]
 
 [ext_resource type="Script" path="res://doubleJumpGem.gd" id="1_vvq0c"]
 [ext_resource type="Texture2D" uid="uid://dajmbty8vugq4" path="res://Assests/DoubleJumpGem/hud lantern light.png" id="2_y2dk5"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bdjqf0v4tcci" path="res://Assests/DoubleJumpGem/idle 6.png" id="14_752r1"]
 [ext_resource type="Texture2D" uid="uid://1gvl2dx0g4a6" path="res://Assests/DoubleJumpGem/idle 7.png" id="15_sambj"]
 [ext_resource type="Texture2D" uid="uid://1u3lhs25nnp7" path="res://Assests/DoubleJumpGem/idle 8.png" id="16_0xc5e"]
+[ext_resource type="AudioStream" uid="uid://cqvktj6ymkd78" path="res://Assests/SFX/item_pickup_beep.wav" id="17_muf1i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_scm5f"]
 
@@ -74,6 +75,24 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_un4t8"]
+resource_name = "Float"
+length = 2.3
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_hmm1u"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_jlicq"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxhw8"]
+_data = {
+"Float": SubResource("Animation_un4t8"),
+"RESET": SubResource("Animation_hmm1u"),
+"new_animation": SubResource("Animation_jlicq")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vvq0c")
 
@@ -96,6 +115,15 @@ texture = ExtResource("2_y2dk5")
 sprite_frames = SubResource("SpriteFrames_7dfta")
 animation = &"hit"
 autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vxhw8")
+}
+autoplay = "Float"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_muf1i")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

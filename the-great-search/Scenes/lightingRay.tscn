@@ -67,16 +67,16 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_vp7lm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.043
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("9_urx3r")
-volume_db = -9.658
-pitch_scale = 0.72
+volume_db = 1.311
+pitch_scale = 1.02
 autoplay = true
-max_distance = 206.0
-attenuation = 1.86607
+max_distance = 210.0
 bus = &"SFX"
+area_mask = 3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
