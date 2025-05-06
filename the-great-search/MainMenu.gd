@@ -29,14 +29,31 @@ func _ready() -> void:
 	%ResumeButton.pressed.connect(toggle_pause_menu)
 	%SettingsButton.pressed.connect(func(): settings_requested.emit())
 	%QuitButton.pressed.connect(quit_to_main_menu)
+	%Controls.pressed.connect(show_controls)
+	
+	# Connect back button
+	$ControlsPage/"Back Button".pressed.connect(hide_controls)
+	
+	# Set initial visibility
+	$ControlsPage.visible = false
+	$CenterContainer.visible = true
 
 func toggle_pause_menu() -> void:
 	# Toggle visibility
 	print("MENU PRESSED")
 	visible = !visible
 	
-	# Toggle game pause
-	get_tree().paused = visible
+	# Make sure controls are hidden when toggling menu
+	if visible:
+		$CenterContainer.visible = true
+		$ControlsPage.visible = false
+	else:
+		# Ensure game resumes when menu is closed
+		get_tree().paused = false
+	
+	# Toggle game pause when menu is visible
+	if visible:
+		get_tree().paused = true
 	
 	# Print debug info
 	print("Gameplay Menu toggled. Visible: ", visible, " Paused: ", get_tree().paused)
@@ -49,3 +66,13 @@ func quit_to_main_menu() -> void:
 	SceneTransition.transition_duration = 1.0
 	SceneTransition.transition_delay = 0.5
 	SceneTransition.change_scene("res://Scenes/adafruit_presents_root.tscn")
+
+func show_controls() -> void:
+	# Hide the menu buttons and show the controls page
+	$CenterContainer.visible = false
+	$ControlsPage.visible = true
+
+func hide_controls() -> void:
+	# Hide controls page and show the menu
+	$ControlsPage.visible = false
+	$CenterContainer.visible = true

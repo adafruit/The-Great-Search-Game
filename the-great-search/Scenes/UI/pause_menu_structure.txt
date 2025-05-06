@@ -1,0 +1,39 @@
+PauseMenu (CanvasLayer) - Script: pause_menu.gd
+├── PanelContainer
+│   ├── ColorRect (Background)
+│   └── MarginContainer
+│       └── VBoxContainer
+│           ├── TitleLabel ("PAUSED")
+│           ├── Spacer (Control)
+│           ├── ResumeButton
+│           ├── SettingsButton
+│           └── QuitButton
+└── SettingsPanel
+	├── ColorRect (Background)
+	└── MarginContainer
+		└── VBoxContainer
+			├── TitleLabel ("SETTINGS")
+			├── Spacer (Control)
+			├── HBoxContainer (Sound)
+			│   ├── Label ("Sound Volume")
+			│   └── HSlider
+			├── HBoxContainer (Music)
+			│   ├── Label ("Music Volume")
+			│   └── HSlider
+			├── HBoxContainer (Fullscreen)
+			│   ├── Label ("Fullscreen")
+			│   └── CheckBox
+			└── BackButton
+
+Instructions for implementation:
+1. Create a new scene with a CanvasLayer root node
+2. Attach the pause_menu.gd script
+3. Add the PanelContainer and SettingsPanel as children
+4. Build the UI hierarchy as shown above
+5. Set up proper styling with your game's theme
+6. Save the scene as "pause_menu.tscn" in the UI folder
+
+Integration steps:
+1. Instance this scene in your main gameplay scene
+2. Make sure the ESC key is properly mapped to "ui_cancel" in your project settings
+3. The pause menu will automatically handle input and pause functionality

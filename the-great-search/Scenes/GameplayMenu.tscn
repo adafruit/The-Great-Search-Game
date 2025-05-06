@@ -1,13 +1,19 @@
-[gd_scene load_steps=37 format=3 uid="uid://gwrircurl2m8"]
+[gd_scene load_steps=43 format=3 uid="uid://gwrircurl2m8"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_yy0ho"]
 [ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_s8e6h"]
 [ext_resource type="Texture2D" uid="uid://cc65hcvuibkgc" path="res://Assests/from_the_desk_of_ladyada_desk_74x68-Sheet1.png" id="3_a5xxq"]
 [ext_resource type="Script" path="res://Scenes/MainMenuSettingsPanel.gd" id="3_gun7u"]
 [ext_resource type="Texture2D" uid="uid://lh2wca6khh7a" path="res://Assests/keybord and controller icons/individual sprites/controller/controller button 1.png" id="5_uvaai"]
+[ext_resource type="Texture2D" uid="uid://isw81msqvrpu" path="res://Assests/keybord and controller icons/keyboard/full keyboard light.png" id="6_4ar36"]
 [ext_resource type="Texture2D" uid="uid://xw5vnvnm3c68" path="res://Assests/keybord and controller icons/individual sprites/controller/controller button 3.png" id="6_id3iy"]
 [ext_resource type="Texture2D" uid="uid://bsow7lliqlb5d" path="res://Assests/keybord and controller icons/individual sprites/controller/controller button 2.png" id="7_flr5s"]
+[ext_resource type="Texture2D" uid="uid://j8gf7celrlsi" path="res://Assests/keybord and controller icons/individual sprites/keyboard/V.png" id="7_q24o2"]
 [ext_resource type="Texture2D" uid="uid://ci68qdcoylyxo" path="res://Assests/keybord and controller icons/individual sprites/controller/controller button 4.png" id="8_7xfhd"]
+[ext_resource type="Texture2D" uid="uid://bysgb2cvfbnck" path="res://Assests/keybord and controller icons/individual sprites/keyboard/C button.png" id="9_qyakm"]
+[ext_resource type="Texture2D" uid="uid://q11y7piruwrp" path="res://Assests/keybord and controller icons/controller and mouse/ps5 controller dark image.png" id="9_wlpcf"]
+[ext_resource type="Texture2D" uid="uid://bucqyllu5bqdc" path="res://Assests/keybord and controller icons/individual sprites/keyboard/space.png" id="10_esxdl"]
+[ext_resource type="Texture2D" uid="uid://bjfwga0vjqpx" path="res://Assests/keybord and controller icons/individual sprites/keyboard/X.png" id="11_pscif"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4x3g"]
 atlas = ExtResource("3_a5xxq")
@@ -235,11 +241,17 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-visible = false
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer/HBoxContainer"]
+position = Vector2(-297, 81)
+scale = Vector2(7.10716, 7.09328)
+sprite_frames = SubResource("SpriteFrames_sg4hy")
+autoplay = "default"
+frame_progress = 0.690077
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Controls" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s8e6h")
@@ -247,14 +259,14 @@ theme_override_font_sizes/font_size = 42
 text = "Controls
 "
 
-[node name="ResumeButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s8e6h")
 theme_override_font_sizes/font_size = 42
 text = "Resume"
 
-[node name="Play" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s8e6h")
@@ -262,27 +274,20 @@ theme_override_font_sizes/font_size = 42
 text = "Restart
 "
 
-[node name="SettingsButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s8e6h")
 theme_override_font_sizes/font_size = 42
 text = "Setting"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_s8e6h")
 theme_override_font_sizes/font_size = 42
 text = "Quit
 "
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer/HBoxContainer"]
-position = Vector2(-297, 81)
-scale = Vector2(7.10716, 7.09328)
-sprite_frames = SubResource("SpriteFrames_sg4hy")
-autoplay = "default"
-frame_progress = 0.967116
 
 [node name="SettingsPanelContainer" type="CenterContainer" parent="."]
 visible = false
@@ -360,7 +365,8 @@ text = "Fullscreen
 [node name="CheckBox" type="CheckBox" parent="SettingsView/TabContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="ControlsPage" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -368,50 +374,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
+[node name="CenterContainer" type="CenterContainer" parent="ControlsPage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
+[node name="Ps5ControllerDarkImage" type="Sprite2D" parent="ControlsPage"]
+position = Vector2(648.004, 504)
+scale = Vector2(0.666703, 0.666703)
+texture = ExtResource("9_wlpcf")
+
+[node name="FullKeyboardLight" type="Sprite2D" parent="ControlsPage"]
+position = Vector2(1236, 479)
+scale = Vector2(0.516014, 0.516014)
+texture = ExtResource("6_4ar36")
+
+[node name="V" type="Sprite2D" parent="ControlsPage"]
+position = Vector2(1219, 805)
+texture = ExtResource("7_q24o2")
+
+[node name="ControllerButton4" type="Sprite2D" parent="ControlsPage"]
+position = Vector2(645.004, 652)
+texture = ExtResource("8_7xfhd")
+
+[node name="Label3" type="Label" parent="ControlsPage"]
 layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_s8e6h")
-theme_override_font_sizes/font_size = 36
-text = "Jump
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ControllerButton1" type="Sprite2D" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Label"]
-position = Vector2(-52, 16)
-texture = ExtResource("5_uvaai")
-
-[node name="Label2" type="Label" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_s8e6h")
-theme_override_font_sizes/font_size = 36
-text = "Attack"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ControllerButton4" type="Sprite2D" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Label2"]
-position = Vector2(-38, 20)
-texture = ExtResource("6_id3iy")
-
-[node name="Label3" type="Label" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 745.004
+offset_top = 782.0
+offset_right = 1105.0
+offset_bottom = 818.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_s8e6h")
 theme_override_font_sizes/font_size = 36
@@ -419,12 +415,41 @@ text = "Slo-Motion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ControllerButton2" type="Sprite2D" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Label3"]
-position = Vector2(-39, 16)
+[node name="CButton" type="Sprite2D" parent="ControlsPage/Label3"]
+position = Vector2(474, -122)
+texture = ExtResource("9_qyakm")
+
+[node name="ControllerButton2" type="Sprite2D" parent="ControlsPage/Label3"]
+position = Vector2(-106, 16)
 texture = ExtResource("7_flr5s")
 
-[node name="Label4" type="Label" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="ControlsPage"]
 layout_mode = 2
+offset_left = 802.004
+offset_top = 704.0
+offset_right = 1018.0
+offset_bottom = 740.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_s8e6h")
+theme_override_font_sizes/font_size = 36
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Sprite2D" parent="ControlsPage/Label2"]
+position = Vector2(418, 24)
+texture = ExtResource("11_pscif")
+
+[node name="ControllerButton4" type="Sprite2D" parent="ControlsPage/Label2"]
+position = Vector2(-160, 20)
+texture = ExtResource("6_id3iy")
+
+[node name="Label4" type="Label" parent="ControlsPage"]
+layout_mode = 2
+offset_left = 839.004
+offset_top = 636.0
+offset_right = 1019.0
+offset_bottom = 672.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_s8e6h")
 theme_override_font_sizes/font_size = 36
@@ -432,8 +457,50 @@ text = "Dash "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ControllerButton4" type="Sprite2D" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Label4"]
-position = Vector2(-90, 23)
-texture = ExtResource("8_7xfhd")
+[node name="Label5" type="Label" parent="ControlsPage"]
+layout_mode = 2
+offset_left = 838.004
+offset_top = 570.0
+offset_right = 982.004
+offset_bottom = 606.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("2_s8e6h")
+theme_override_font_sizes/font_size = 36
+text = "Jump
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/SettingsButton" to="SettingsPanelContainer" method="show"]
+[node name="Space" type="Sprite2D" parent="ControlsPage/Label5"]
+position = Vector2(382, 18)
+texture = ExtResource("10_esxdl")
+
+[node name="ControllerButton1" type="Sprite2D" parent="ControlsPage/Label5"]
+position = Vector2(-192, 16)
+texture = ExtResource("5_uvaai")
+
+[node name="Label" type="Label" parent="ControlsPage"]
+layout_mode = 2
+offset_left = 715.004
+offset_top = 327.0
+offset_right = 1147.0
+offset_bottom = 381.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_s8e6h")
+theme_override_font_sizes/font_size = 54
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back Button" type="Button" parent="ControlsPage"]
+layout_mode = 0
+offset_left = 1379.0
+offset_top = 283.0
+offset_right = 1441.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("2_s8e6h")
+theme_override_font_sizes/font_size = 54
+text = "X"
+flat = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsButton" to="SettingsPanelContainer" method="show"]
