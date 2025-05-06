@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://cemq5rquhls4g"]
+
+[ext_resource type="Script" path="res://Scenes/dialogue_view.gd" id="1_4tbvu"]
+[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_kidlh"]
+
+[node name="DialogueView" type="Control" groups=["dialogue_view"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4tbvu")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.257016, 0.526118, 0.92825, 0.764706)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -38.5
+offset_right = 28.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kidlh")
+theme_override_font_sizes/font_size = 64
+text = "Testing
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kidlh")
+theme_override_font_sizes/font_size = 32
+text = "Body Message"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Secondary" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kidlh")
+theme_override_font_sizes/font_size = 24
+text = "Secondary
+"
+horizontal_alignment = 1
+vertical_alignment = 1

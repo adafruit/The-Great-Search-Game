@@ -1,0 +1,107 @@
+[gd_scene load_steps=25 format=3 uid="uid://csaf0qs3bwoe3"]
+
+[ext_resource type="Texture2D" uid="uid://dbs4douf4uvya" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt1.png" id="1_80sd7"]
+[ext_resource type="Texture2D" uid="uid://blguhn8108u1p" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt2.png" id="2_q4yem"]
+[ext_resource type="Texture2D" uid="uid://cswdt7mj2pytv" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt3.png" id="3_jikh0"]
+[ext_resource type="Texture2D" uid="uid://gedgltywyi2t" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt4.png" id="4_w0sem"]
+[ext_resource type="Texture2D" uid="uid://cegq6tb1o02du" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt5.png" id="5_dksew"]
+[ext_resource type="Texture2D" uid="uid://bc7qqa6rwqq5i" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt6.png" id="6_58ldj"]
+[ext_resource type="Texture2D" uid="uid://dbwqca4esqo6f" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt7.png" id="7_pollx"]
+[ext_resource type="Texture2D" uid="uid://d2y6c071li4ne" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt8.png" id="8_ga4ai"]
+[ext_resource type="Texture2D" uid="uid://ciikr1ah55i6a" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt9.png" id="9_bu6ra"]
+[ext_resource type="Texture2D" uid="uid://ddjvxpq6i2e7n" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt10.png" id="10_p3ua4"]
+[ext_resource type="Texture2D" uid="uid://414nnmbvnp2l" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt11.png" id="11_37axb"]
+[ext_resource type="Texture2D" uid="uid://dhx8edww8nlog" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt12.png" id="12_u816s"]
+[ext_resource type="Texture2D" uid="uid://p6eyjwvkbwfd" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt13.png" id="13_po2qg"]
+[ext_resource type="Texture2D" uid="uid://cri8s48ak6rtj" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt14.png" id="14_yh42n"]
+[ext_resource type="Texture2D" uid="uid://d0puwet6thn2b" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt15.png" id="15_qy1hh"]
+[ext_resource type="Texture2D" uid="uid://dtnqhhci88oh2" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt16.png" id="16_pprih"]
+[ext_resource type="Texture2D" uid="uid://cu3ac2orhug6e" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt19.png" id="17_jcn2q"]
+[ext_resource type="Texture2D" uid="uid://bvca604c5ywvb" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt17.png" id="18_velic"]
+[ext_resource type="Texture2D" uid="uid://c3p8ymie2i2qk" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt18.png" id="19_8sung"]
+[ext_resource type="Texture2D" uid="uid://dyuidrtop4tut" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt20.png" id="20_0su1i"]
+[ext_resource type="Texture2D" uid="uid://b5me3h0wiv5q7" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt21.png" id="21_ccbjq"]
+[ext_resource type="Texture2D" uid="uid://tgo12ojr1kx7" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt22.png" id="22_503sr"]
+[ext_resource type="Texture2D" uid="uid://b4cupo34j706j" path="res://Assests/Magic Pack 3 files/sprites/big-bolt/big-bolt23.png" id="23_pieth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1nra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_80sd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q4yem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jikh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w0sem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dksew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_58ldj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pollx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ga4ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bu6ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p3ua4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_37axb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u816s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_po2qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yh42n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qy1hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pprih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jcn2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_velic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8sung")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0su1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ccbjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_503sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pieth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Bolt Animation 1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_k1nra")
+autoplay = "default"
+frame_progress = 0.216377

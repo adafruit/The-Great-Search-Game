@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lysykbkaphc0"]
+
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="1_hgafd"]
+[ext_resource type="Texture2D" uid="uid://df8uqw1rv60yb" path="res://Assests/imagerp2040.png" id="2_f4q6a"]
+
+[node name="Collectible" instance=ExtResource("1_hgafd")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1.7053e-13, -1.42109e-14)
+scale = Vector2(0.857031, 0.789853)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-9.53674e-07, -9.53674e-07)
+scale = Vector2(0.0244302, 0.0244302)
+texture = ExtResource("2_f4q6a")

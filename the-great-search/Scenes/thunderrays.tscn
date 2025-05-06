@@ -1,0 +1,62 @@
+[gd_scene load_steps=14 format=3 uid="uid://djd2t0jx7hc5e"]
+
+[ext_resource type="Texture2D" uid="uid://c8l3nb4uvdxrd" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays1.png" id="1_r7ux7"]
+[ext_resource type="Texture2D" uid="uid://cp18p0blmcuk1" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays2.png" id="2_b55ld"]
+[ext_resource type="Texture2D" uid="uid://cedx4wb06ce52" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays3.png" id="3_vs7yc"]
+[ext_resource type="Texture2D" uid="uid://xexi63rjrfg3" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays4.png" id="4_toejw"]
+[ext_resource type="Texture2D" uid="uid://bw61geqvay08f" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays5.png" id="5_tdks8"]
+[ext_resource type="Texture2D" uid="uid://vnl8yjjh8ot4" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/impact/thunder-rays6.png" id="6_xk0ny"]
+[ext_resource type="Texture2D" uid="uid://h6adgq0eu8a6" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays1.png" id="7_x608h"]
+[ext_resource type="Texture2D" uid="uid://bmj036p7gnski" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays2.png" id="8_g0tf4"]
+[ext_resource type="Texture2D" uid="uid://d36peoluv3q3" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays3.png" id="9_pxy3a"]
+[ext_resource type="Texture2D" uid="uid://df08psvj028uo" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays4.png" id="10_ss26c"]
+[ext_resource type="Texture2D" uid="uid://cv63xkqplir7q" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays5.png" id="11_aiy1w"]
+[ext_resource type="Texture2D" uid="uid://c6guj2a665d8u" path="res://Assests/Magic Pack 3 files/sprites/thunderrays/just rays/thunder-rays6.png" id="12_8ak0f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlemx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r7ux7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b55ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vs7yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_toejw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tdks8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xk0ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x608h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g0tf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pxy3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ss26c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aiy1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8ak0f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Thunderrays" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rlemx")
+frame_progress = 0.791185

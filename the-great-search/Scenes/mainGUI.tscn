@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdmdv6441vngl"]
+[gd_scene load_steps=24 format=3 uid="uid://cdmdv6441vngl"]
 
 [ext_resource type="Script" path="res://Scenes/main_gui.gd" id="1_a1iv4"]
 [ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="1_avqwe"]
 [ext_resource type="Texture2D" uid="uid://bu47dq8cbsha6" path="res://Assests/coin.png" id="3_yys3b"]
+[ext_resource type="Texture2D" uid="uid://wwwe0qlv7es8" path="res://Assests/Sparky-TGS.png" id="4_hpqe5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrabx"]
 atlas = ExtResource("3_yys3b")
@@ -96,23 +97,96 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsckf"]
+atlas = ExtResource("4_hpqe5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiku2"]
+atlas = ExtResource("4_hpqe5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flk4l"]
+atlas = ExtResource("4_hpqe5")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkvpe"]
+atlas = ExtResource("4_hpqe5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjgjx"]
+atlas = ExtResource("4_hpqe5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaqrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsckf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiku2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flk4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkvpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjgjx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_a1iv4")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1609.0
-offset_top = 37.0
-offset_right = 1865.0
-offset_bottom = 101.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -499.0
+offset_right = -50.0001
+offset_bottom = -435.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.0036, 1.00726)
 theme_override_fonts/font = ExtResource("1_avqwe")
 theme_override_font_sizes/font_size = 32
-text = "0"
-horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1673, 68)
+position = Vector2(1583, 71)
 scale = Vector2(3.99355, 3.99355)
 sprite_frames = SubResource("SpriteFrames_1a5sc")
 autoplay = "default"
+
+[node name="SparkyScore" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_top = 55.0
+offset_right = 29.0
+offset_bottom = 87.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_avqwe")
+theme_override_font_sizes/font_size = 32
+text = "
+"
+horizontal_alignment = 3
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sparky" type="AnimatedSprite2D" parent="."]
+position = Vector2(1749, 67)
+scale = Vector2(1.22979, 1.22979)
+sprite_frames = SubResource("SpriteFrames_vaqrt")
+autoplay = "default"
+frame = 4
+frame_progress = 0.641177

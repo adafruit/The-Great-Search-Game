@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7f0jrsa8bkos"]
+
+[ext_resource type="Texture2D" uid="uid://dwfaxsefrhom8" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-2.png" id="1_2p51p"]
+[ext_resource type="Texture2D" uid="uid://bvu2gksp5jiav" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-3.png" id="2_4hup5"]
+[ext_resource type="Texture2D" uid="uid://gq30u84q1bvb" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-4.png" id="3_krkk6"]
+[ext_resource type="Texture2D" uid="uid://drwsvdo1dqlad" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-5.png" id="4_8gyy7"]
+[ext_resource type="Texture2D" uid="uid://e5f5x6njj6lf" path="res://Assests/Magic Pack 3 files/sprites/small-spark-3/small-spark-3-preview1.png" id="5_e3pcs"]
+[ext_resource type="Texture2D" uid="uid://cbiuiov4aiv2x" path="res://Assests/Magic Pack 3 files/sprites/small-spark-3/small-spark-3-preview2.png" id="6_u185t"]
+[ext_resource type="Texture2D" uid="uid://c18t40ft2tjqy" path="res://Assests/Magic Pack 3 files/sprites/small-spark-3/small-spark-3-preview3.png" id="7_vwlkr"]
+[ext_resource type="Texture2D" uid="uid://bfqmrf2j35iy3" path="res://Assests/Magic Pack 3 files/sprites/small-spark-3/small-spark-3-preview4.png" id="8_a6vp8"]
+[ext_resource type="Texture2D" uid="uid://cttdc4x610ev8" path="res://Assests/Magic Pack 3 files/sprites/small-spark-3/small-spark-3-preview5.png" id="9_5bh51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaffm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p51p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4hup5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_krkk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8gyy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e3pcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u185t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vwlkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a6vp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5bh51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Spark 2" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vaffm")
+frame_progress = 0.6079

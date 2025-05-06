@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15bss"]
@@ -124,7 +124,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8witg"]
@@ -179,7 +179,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m5ula"]
@@ -234,7 +234,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ruewt"]
@@ -289,7 +289,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdftu"]
@@ -344,7 +344,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0vqxr"]
@@ -399,7 +399,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wqo4j"]
@@ -454,7 +454,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 18.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqepj"]
@@ -471,49 +471,41 @@ beginDelay = 1.58
 position = Vector2(32, -1)
 sprite_frames = SubResource("SpriteFrames_uy56o")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(96, -1)
 sprite_frames = SubResource("SpriteFrames_15bss")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(160, -1)
 sprite_frames = SubResource("SpriteFrames_8witg")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(224, -1)
 sprite_frames = SubResource("SpriteFrames_m5ula")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(288, -1)
 sprite_frames = SubResource("SpriteFrames_ruewt")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(352, -1)
 sprite_frames = SubResource("SpriteFrames_cdftu")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(480, -1)
 sprite_frames = SubResource("SpriteFrames_0vqxr")
 animation = &"lightning"
-frame = 5
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(416, -1)
 sprite_frames = SubResource("SpriteFrames_wqo4j")
 animation = &"lightning"
-frame = 5
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8

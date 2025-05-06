@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://7n15u5rphe0x"]
+
+[ext_resource type="Texture2D" uid="uid://be5b15gu1ox6g" path="res://Scenes/Apt Scene/LadyAdaSprite/Cat.png" id="1_7tsev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oujt"]
+atlas = ExtResource("1_7tsev")
+region = Rect2(164, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nawya"]
+atlas = ExtResource("1_7tsev")
+region = Rect2(59, 0, 30, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tndhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oujt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nawya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Cat" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tndhi")
+autoplay = "default"
+frame_progress = 0.691848

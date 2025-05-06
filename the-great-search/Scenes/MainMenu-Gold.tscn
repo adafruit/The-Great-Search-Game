@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://ed3v2tl4kr78"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenuSettingsPanel.gd" id="1_28nas"]
+[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_4ub3x"]
+
+[node name="MainMenuGold" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28nas")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00658, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4ub3x")
+theme_override_font_sizes/font_size = 42
+text = "Press Start or Enter"
+flat = true
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4ub3x")
+theme_override_font_sizes/font_size = 42
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4ub3x")
+theme_override_font_sizes/font_size = 42
+text = "QUIT
+"

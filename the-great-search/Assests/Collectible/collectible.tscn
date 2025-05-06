@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkxmfv0w04mbc"]
+
+[ext_resource type="Script" path="res://Assests/Collectible/collectible.gd" id="1_a4awh"]
+[ext_resource type="AudioStream" uid="uid://fns2srjlsq2l" path="res://Assests/SFX/item_pickup_tonal.wav" id="2_526f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oh41"]
+size = Vector2(26, 18)
+
+[node name="Collectible" type="Area2D"]
+script = ExtResource("1_a4awh")
+type = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7oh41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_526f1")

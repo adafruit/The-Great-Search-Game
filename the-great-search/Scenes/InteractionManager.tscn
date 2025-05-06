@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkgbrwtyanslq"]
+[gd_scene load_steps=6 format=3 uid="uid://bkgbrwtyanslq"]
 
 [ext_resource type="Script" path="res://Scenes/InteractionManager.gd" id="1_kepc3"]
 [ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_x7bgp"]
+[ext_resource type="PackedScene" uid="uid://cemq5rquhls4g" path="res://Scenes/DialogueView.tscn" id="3_ccnhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fni04"]
 size = Vector2(145, 70)
@@ -12,7 +13,6 @@ font_size = 9
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_kepc3")
-action_name = "interact"
 
 [node name="InteractRange" type="Area2D" parent="."]
 collision_layer = 0
@@ -34,6 +34,10 @@ grow_horizontal = 2
 label_settings = SubResource("LabelSettings_qp5yn")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="DialogueView" parent="GUI" instance=ExtResource("3_ccnhg")]
 
 [connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
 [connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

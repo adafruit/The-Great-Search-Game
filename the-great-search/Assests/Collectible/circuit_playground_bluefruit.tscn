@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ifaeqnglumo"]
+
+[ext_resource type="Texture2D" uid="uid://dnav53exy1ind" path="res://Assests/image-cpb.png" id="1_wj3n1"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="2_50rxp"]
+
+[node name="CircuitPlaygroundBluefruit" type="Sprite2D"]
+scale = Vector2(0.0712226, 0.0712226)
+texture = ExtResource("1_wj3n1")
+
+[node name="Collectible" parent="." instance=ExtResource("2_50rxp")]
+scale = Vector2(50.9841, 52.1074)
+collision_layer = 2
+collision_mask = 2

@@ -1,10 +1,12 @@
 extends CanvasLayer
-@onready var label: Label = $Label
-
 
 func _ready() -> void:
-	Global_Score.connect("update_score", update_score)
-	label.text = "0"
+	Global.connect("update_score", update_score)
+	$Label.text = str(Global.score)
+	$SparkyScore.text = str(Global.sparkysVanquished)
 
 func update_score() -> void:
-	label.text = str(Global_Score.score)
+	#label
+	print("Update Score Called")
+	$Label.text = str(Global.score)
+	$SparkyScore.text = str(Global.sparkysVanquished)

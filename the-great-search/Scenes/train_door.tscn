@@ -1,0 +1,149 @@
+[gd_scene load_steps=21 format=3 uid="uid://biv40rftrrsd7"]
+
+[ext_resource type="Texture2D" uid="uid://cfewadfvk0tjm" path="res://Assests/Subway_Train_5_Door_1_32x32.png" id="1_1ftfy"]
+[ext_resource type="Script" path="res://Scripts/train_door.gd" id="1_wvn5g"]
+[ext_resource type="Script" path="res://Scenes/interactArea.gd" id="3_l4mqk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpcdg"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6v4l"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_subf0"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghydp"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1puj"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fv4r"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m353r"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncy7j"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgbgj"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar7jk"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lgbt"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yktx"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opc42"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vynpk"]
+atlas = ExtResource("1_1ftfy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfjpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpcdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6v4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_subf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghydp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1puj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fv4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m353r")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncy7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgbgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar7jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lgbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yktx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opc42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vynpk")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrbei"]
+size = Vector2(48, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmt6g"]
+size = Vector2(32, 48)
+
+[node name="TrainDoor" type="Area2D"]
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("1_wvn5g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tfjpa")
+animation = &"close"
+frame = 6
+frame_progress = 1.0
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("3_l4mqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_wrbei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_nmt6g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

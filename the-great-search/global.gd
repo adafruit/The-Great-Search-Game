@@ -1,4 +1,6 @@
-extends Node2D
+extends Node
 
-signal updateScore  
+signal update_score  
+
 var score: int = 0
+var sparkysVanquished: int = 0

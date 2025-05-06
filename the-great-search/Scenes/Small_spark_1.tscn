@@ -1,0 +1,62 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmacb6kon3a7e"]
+
+[ext_resource type="Texture2D" uid="uid://6x1kyp2ejnxw" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark1.png" id="1_pcevd"]
+[ext_resource type="Texture2D" uid="uid://qhukv2fg3d1p" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark2.png" id="2_nk1mo"]
+[ext_resource type="Texture2D" uid="uid://4fhqcsmu7quo" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark3.png" id="3_l60n7"]
+[ext_resource type="Texture2D" uid="uid://men8r3h6x6my" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark4.png" id="4_85n8s"]
+[ext_resource type="Texture2D" uid="uid://byunwurq5qrgv" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark5.png" id="5_f8nxe"]
+[ext_resource type="Texture2D" uid="uid://6d4gnc3hqgwk" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark6.png" id="6_2cgmo"]
+[ext_resource type="Texture2D" uid="uid://f1ytivrinp1k" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark7.png" id="7_6w40k"]
+[ext_resource type="Texture2D" uid="uid://3uqhwdeystfq" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark8.png" id="8_4fr1c"]
+[ext_resource type="Texture2D" uid="uid://bnm0a60skghyg" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark9.png" id="9_dmoih"]
+[ext_resource type="Texture2D" uid="uid://bh4qd2g4yc5tb" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark10.png" id="10_2ktqr"]
+[ext_resource type="Texture2D" uid="uid://d4mj1gsel2q8y" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark11.png" id="11_2vmet"]
+[ext_resource type="Texture2D" uid="uid://d0ewoiqgdg81p" path="res://Assests/Magic Pack 3 files/sprites/small-spark/small-spark12.png" id="12_oh1d0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqsds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pcevd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nk1mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l60n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_85n8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f8nxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2cgmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6w40k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4fr1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dmoih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2ktqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2vmet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oh1d0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Small Spark 1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wqsds")
+frame_progress = 0.983741

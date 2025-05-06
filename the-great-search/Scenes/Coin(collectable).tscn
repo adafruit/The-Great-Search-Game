@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://bk8u4nw4gfgmq"]
 
-[ext_resource type="Script" path="res://Scenes/cappy(collectable).gd" id="1_m48sa"]
+[ext_resource type="Script" path="res://Scenes/Neopixel.gd" id="1_m48sa"]
 [ext_resource type="AudioStream" uid="uid://dsm1il5jpny2j" path="res://Assests/SFX/item_pickup_plus.wav" id="3_5qo7w"]
 [ext_resource type="Texture2D" uid="uid://bu47dq8cbsha6" path="res://Assests/coin.png" id="3_14x2d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imeh5"]
-radius = 7.0
-height = 14.0
+radius = 11.0
+height = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yory"]
 atlas = ExtResource("3_14x2d")
@@ -101,6 +101,7 @@ animations = [{
 }]
 
 [node name="Coin" type="Area2D"]
+scale = Vector2(0.793237, 0.793237)
 collision_mask = 2
 script = ExtResource("1_m48sa")
 shake_amount = 0.5
@@ -116,7 +117,7 @@ volume_db = 12.716
 area_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
+scale = Vector2(1.34375, 1.34375)
 sprite_frames = SubResource("SpriteFrames_qjqqb")
 autoplay = "default"
 

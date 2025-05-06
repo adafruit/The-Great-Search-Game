@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://onlj51wjhyau"]
+
+[ext_resource type="Script" path="res://vertical_follow_area.gd" id="1_7at8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uceob"]
+
+[node name="VerticalFollowArea" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_7at8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uceob")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xrlaxkvu40vv"]
+
+[ext_resource type="Script" path="res://Scenes/CameraLimitArea/camera_limit_area.gd" id="1_6ijrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkxwe"]
+size = Vector2(224, 152)
+
+[node name="CameraLimitArea" type="Area2D"]
+script = ExtResource("1_6ijrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 12)
+shape = SubResource("RectangleShape2D_jkxwe")

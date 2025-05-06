@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg43bwu48fomk" path="res://Assests/Tiles/messageBoard.png" id="1_2yikk"]
 [ext_resource type="Script" path="res://Scenes/message_board.gd" id="1_dlog2"]
-[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactable.tscn" id="2_rknwr"]
+[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactionArea.tscn" id="2_rknwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2jq7"]
 size = Vector2(64, 31)
@@ -12,7 +12,7 @@ size = Vector2(62, 31)
 
 [node name="MessageBoard" type="Area2D"]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 9
 script = ExtResource("1_dlog2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,7 +24,7 @@ texture = ExtResource("1_2yikk")
 
 [node name="Interactable" parent="." instance=ExtResource("2_rknwr")]
 position = Vector2(0, 0.5)
-collision_mask = 0
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(1, 0)

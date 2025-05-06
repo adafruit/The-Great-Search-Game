@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://brbogp2ycbsun"]
+[gd_scene load_steps=43 format=3 uid="uid://brbogp2ycbsun"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_eglwb"]
 [ext_resource type="Texture2D" uid="uid://dvfrc41n33nna" path="res://Assests/Lady Ada Idle - No Shadow/frame_0_delay-0.1s.png" id="2_77xhb"]
+[ext_resource type="Texture2D" uid="uid://chy8t5t5qkuw4" path="res://Assests/Lady Ada Attack/LadyAdaAttack1-Gold.png" id="2_armuo"]
 [ext_resource type="Texture2D" uid="uid://dr1t4gr6bmg1d" path="res://Assests/Lady Ada Jump - No Shadow/frame_6_delay-0.1s copy.png" id="3_okpbs"]
 [ext_resource type="Texture2D" uid="uid://bhuhcyag4ykw5" path="res://Assests/Lady Ada Idle - No Shadow/frame_1_delay-0.1s.png" id="3_rxdg4"]
+[ext_resource type="Texture2D" uid="uid://ci3r0hc21hsi1" path="res://Assests/dash.png" id="3_wr1pj"]
 [ext_resource type="Texture2D" uid="uid://bxc3jgmyfeoql" path="res://Assests/Lady Ada Idle - No Shadow/frame_3_delay-0.1s copy.png" id="4_o7rpn"]
 [ext_resource type="Texture2D" uid="uid://dawmdompglnb1" path="res://Assests/Lady Ada Idle - No Shadow/frame_4_delay-0.1s.png" id="5_2wtc4"]
 [ext_resource type="Texture2D" uid="uid://cr5nb3xm3sd1h" path="res://Assests/Lady Ada Idle - No Shadow/frame_5_delay-0.1s.png" id="6_rx1j4"]
@@ -19,11 +21,93 @@
 [ext_resource type="Texture2D" uid="uid://b6odufqsh5acy" path="res://Assests/Lady Ada Run - No Shadow/frame_6_delay-0.1s.png" id="20_f1nt3"]
 [ext_resource type="AudioStream" uid="uid://b6jxwv7i82u63" path="res://Assests/SFX/jump.wav" id="20_ht7sn"]
 [ext_resource type="Texture2D" uid="uid://bx3jskc4sdcqf" path="res://Assests/Lady Ada Run - No Shadow/frame_7_delay-0.1s.png" id="21_fn3j4"]
-[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactable.tscn" id="21_xw4da"]
+[ext_resource type="PackedScene" uid="uid://cbsn3pnkdm1c8" path="res://Scenes/interactionArea.tscn" id="21_xw4da"]
+[ext_resource type="Texture2D" uid="uid://utxlf2rylsts" path="res://Assests/runSpriteSheet.png" id="22_w511x"]
 [ext_resource type="Texture2D" uid="uid://veeyccml2vlh" path="res://Assests/ladyada_wall_latch_3.png" id="22_x4xa5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3lgg"]
+atlas = ExtResource("2_armuo")
+region = Rect2(0, 0, 60, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kclgt"]
+atlas = ExtResource("2_armuo")
+region = Rect2(62, 0, 63, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyaei"]
+atlas = ExtResource("2_armuo")
+region = Rect2(143, 0, 70, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t02vy"]
+atlas = ExtResource("2_armuo")
+region = Rect2(231, 0, 64, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n7is"]
+atlas = ExtResource("2_armuo")
+region = Rect2(317, 0, 78, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_882bi"]
+atlas = ExtResource("2_armuo")
+region = Rect2(406, 0, 89, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvo6v"]
+atlas = ExtResource("2_armuo")
+region = Rect2(495, 0, 89, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ib6"]
+atlas = ExtResource("2_armuo")
+region = Rect2(584, 0, 89, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ml0a"]
+atlas = ExtResource("2_armuo")
+region = Rect2(678, 0, 89, 77)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_86jci"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3lgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kclgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyaei")
+}],
+"loop": true,
+"name": &"attack_initial",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t02vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n7is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_882bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvo6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ib6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ml0a")
+}],
+"loop": true,
+"name": &"attack_loop",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wr1pj")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_okpbs")
@@ -93,7 +177,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,16 +202,65 @@ size = Vector2(23.3094, 26.0208)
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ygfo"]
 radius = 21.0032
 
+[sub_resource type="Shader" id="Shader_sudxw"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+uniform int particles_anim_h_frames;
+uniform int particles_anim_v_frames;
+uniform bool particles_anim_loop;
+
+void vertex() {
+	float h_frames = float(particles_anim_h_frames);
+	float v_frames = float(particles_anim_v_frames);
+	VERTEX.xy /= vec2(h_frames, v_frames);
+	float particle_total_frames = float(particles_anim_h_frames * particles_anim_v_frames);
+	float particle_frame = floor(INSTANCE_CUSTOM.z * float(particle_total_frames));
+	if (!particles_anim_loop) {
+		particle_frame = clamp(particle_frame, 0.0, particle_total_frames - 1.0);
+	} else {
+		particle_frame = mod(particle_frame, particle_total_frames);
+	}
+
+	vec2 scale_uv = UV / vec2(h_frames, v_frames);
+	UV = scale_uv + vec2(mod(particle_frame, h_frames) / h_frames, floor((particle_frame + 0.5) / h_frames) / v_frames);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3cth"]
+shader = SubResource("Shader_sudxw")
+shader_parameter/particles_anim_h_frames = 7
+shader_parameter/particles_anim_v_frames = 1
+shader_parameter/particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_rqbm3"]
+_data = [Vector2(0.00248139, 0.497019), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nkb3b"]
+curve = SubResource("Curve_rqbm3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6llj6"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_nkb3b")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yxe2"]
+size = Vector2(42.1936, 17.7083)
+
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.12, 1.13467)
+scale = Vector2(0.99802, 1.01236)
 collision_layer = 10
 script = ExtResource("1_eglwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.328124, -14.3281)
+position = Vector2(5.96046e-08, -14.1667)
 scale = Vector2(0.593437, 0.593437)
 sprite_frames = SubResource("SpriteFrames_86jci")
-animation = &"idle"
+animation = &"dash"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -138,7 +271,7 @@ shape = SubResource("RectangleShape2D_wxdcs")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_ht7sn")
-volume_db = -30.838
+volume_db = -80.0
 pitch_scale = 1.03
 
 [node name="KillTimer" type="Timer" parent="."]
@@ -150,3 +283,27 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(1.78571, -16.745)
 shape = SubResource("CircleShape2D_5ygfo")
+
+[node name="DashCooldownTimer" type="Timer" parent="."]
+wait_time = 1.01
+
+[node name="DashDurationTimer" type="Timer" parent="."]
+wait_time = 0.147
+
+[node name="DashParticles" type="GPUParticles2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_q3cth")
+position = Vector2(2.82688, -17.4271)
+scale = Vector2(1, 0.985811)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_6llj6")
+texture = ExtResource("22_w511x")
+lifetime = 0.5
+
+[node name="Attack" type="Timer" parent="."]
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(2.53593, -18.0208)
+shape = SubResource("RectangleShape2D_0yxe2")
