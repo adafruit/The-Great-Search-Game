@@ -2,9 +2,9 @@
 extends Node
 
 # References to menu scenes
-@onready var main_menu = preload("res://scenes/ui/MainMenu.tscn")
-@onready var options_menu = preload("res://scenes/ui/OptionsMenu.tscn")
-@onready var pause_menu = preload("res://scenes/ui/PauseMenu.tscn")
+#@onready var main_menu = preload("res://scenes/ui/MainMenu.tscn")
+#@onready var options_menu = preload("res://scenes/ui/OptionsMenu.tscn")
+#@onready var pause_menu = preload("res://scenes/ui/PauseMenu.tscn")
 
 # Menu state
 var current_menu = null
@@ -36,13 +36,13 @@ func show_menu(menu_type):
 	hide_all_menus()
 	
 	# Instantiate and show the requested menu
-	match menu_type:
-		"main":
-			current_menu = main_menu.instantiate()
-		"options":
-			current_menu = options_menu.instantiate()
-		"pause":
-			current_menu = pause_menu.instantiate()
+	#match menu_type:
+	#	"main":
+	#		current_menu = main_menu.instantiate()
+	#	"options":
+	#		current_menu = options_menu.instantiate()
+	#	"pause":
+	#		current_menu = pause_menu.instantiate()
 	
 	if current_menu:
 		add_child(current_menu)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbpb2cxod1dr6"]
+
+[ext_resource type="Texture2D" uid="uid://bx64d3x61sq0r" path="res://Assests/AI Images/Bench/image-bench.png" id="1_xfcy4"]
+
+[node name="Sprite2D" type="Sprite2D"]
+
+[node name="Image-bench" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.08, 0.06)
+texture = ExtResource("1_xfcy4")

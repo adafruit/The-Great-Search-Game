@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://j8sg72hrr2ex"]
+
+[ext_resource type="Texture2D" uid="uid://dffops5jrsfte" path="res://Assests/AI Images/Subway Sign/image-subwaysign.png" id="1_i1k7x"]
+
+[node name="Subwaysign" type="Sprite2D"]
+texture = ExtResource("1_i1k7x")

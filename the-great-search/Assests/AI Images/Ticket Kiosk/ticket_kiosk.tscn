@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ln3xxu3v20dy"]
+
+[ext_resource type="Texture2D" uid="uid://bq885bqwpf41h" path="res://Assests/AI Images/Ticket Kiosk/image-ticketKiosk.png" id="1_3o6q2"]
+
+[node name="ticket-kiosk" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="Image-ticketKiosk" type="Sprite2D" parent="."]
+texture = ExtResource("1_3o6q2")

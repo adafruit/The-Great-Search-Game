@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://rj1pcy2b4knw"]
 
-[ext_resource type="Script" path="res://Scenes/cannon.gd" id="1_iscyr"]
+[ext_resource type="Script" path="res://Scenes/cannon_simple.gd" id="1_4b8vc"]
 [ext_resource type="Texture2D" uid="uid://cghhxf1faliiu" path="res://Assests/cannon/beamLight.png" id="2_6t3ye"]
 [ext_resource type="Texture2D" uid="uid://bcoo2pagw3c67" path="res://Assests/cannon/beam 1.png" id="2_uncb2"]
 [ext_resource type="Texture2D" uid="uid://bvibox2d26can" path="res://Assests/cannon/beam25.png" id="3_3iw0r"]
@@ -67,9 +67,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15bss"]
@@ -122,9 +122,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8witg"]
@@ -177,9 +177,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m5ula"]
@@ -232,9 +232,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ruewt"]
@@ -287,9 +287,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdftu"]
@@ -342,9 +342,64 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_mownk")
 }],
-"loop": false,
+"loop": true,
 "name": &"lightning",
-"speed": 5.0
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqo4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uncb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_abdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eafjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjlpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hyueo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uj7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay6ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qe106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aleut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_utfgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mownk")
+}],
+"loop": true,
+"name": &"lightning",
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0vqxr"]
@@ -399,71 +454,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"lightning",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wqo4j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_uncb2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_3iw0r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_abdss")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_eafjb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_bjlpw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_hyueo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_4uj7m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_mownk")
-}],
-"loop": false,
-"name": &"beam",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_ay6ui")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_qe106")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_k0byp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_aleut")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_utfgw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_mownk")
-}],
-"loop": false,
-"name": &"lightning",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqepj"]
 size = Vector2(448, 17)
 
 [node name="Cannon" type="Node2D"]
-script = ExtResource("1_iscyr")
-timerLength = 4.42
-beginDelay = 1.58
+script = ExtResource("1_4b8vc")
 
 [node name="Position2D" type="Marker2D" parent="."]
 
@@ -471,41 +469,58 @@ beginDelay = 1.58
 position = Vector2(32, -1)
 sprite_frames = SubResource("SpriteFrames_uy56o")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.0299503
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(96, -1)
 sprite_frames = SubResource("SpriteFrames_15bss")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.854203
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(160, -1)
 sprite_frames = SubResource("SpriteFrames_8witg")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.648724
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(224, -1)
 sprite_frames = SubResource("SpriteFrames_m5ula")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.790514
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(288, -1)
 sprite_frames = SubResource("SpriteFrames_ruewt")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.168014
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(352, -1)
 sprite_frames = SubResource("SpriteFrames_cdftu")
 animation = &"lightning"
-
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
-position = Vector2(480, -1)
-sprite_frames = SubResource("SpriteFrames_0vqxr")
-animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.773231
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(416, -1)
 sprite_frames = SubResource("SpriteFrames_wqo4j")
 animation = &"lightning"
+autoplay = "lightning"
+frame_progress = 0.15298
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
+position = Vector2(480, -1)
+sprite_frames = SubResource("SpriteFrames_0vqxr")
+animation = &"lightning"
+autoplay = "lightning"
+frame = 5
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
@@ -539,6 +554,7 @@ autostart = true
 
 [node name="Killzone" parent="." instance=ExtResource("16_1o7ih")]
 position = Vector2(38, 1)
+collision_mask = 9
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 

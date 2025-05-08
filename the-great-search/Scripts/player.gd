@@ -16,11 +16,6 @@ const lines: Array[String] = [
 @onready var attack_hitbox: Area2D = $AttackHitbox
 var enemies_hit = []
 
-# Acceleration and deceleration parameters
-const ACCELERATION = 2200.0
-const DECELERATION = 3000.0
-const AIR_ACCELERATION = 1400.0
-const AIR_DECELERATION = 1000.0
 
 var is_attacking = false
 var attack_loop_playing = false
@@ -28,16 +23,16 @@ var attack_loop_playing = false
 @onready var attack_timer: Timer = $Attack
 
 
-const DASH_SPEED = 750.0
-const DASH_DURATION = 0.25
-const DASH_COOLDOWN = 0.6
+const DASH_SPEED = 600.0
+const DASH_DURATION = 0.2
+const DASH_COOLDOWN = 0.7
 
 # Dash state
 var can_dash = true
 var is_dashing = false
 var dash_direction = Vector2.ZERO
 
-const SPEED = 325.0
+const SPEED = 250.0
 const JUMP_VELOCITY = -400.0
 const WALL_SLIDE_SPEED = 100.0
 const SLOW_TIME_SCALE = 0.5
@@ -81,6 +76,12 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 	add_to_group("player")
 	jump_buffer_timer = 0.0
+	
+	# Set up respawn manager connections
+	if get_node_or_null("/root/RespawnGlobal"):
+		var respawn_manager = get_node("/root/RespawnGlobal")
+		respawn_manager.player_died.connect(_on_player_died)
+		respawn_manager.player_respawned.connect(_on_player_respawned)
 	
 	if has_node("AttackTimer"):
 		attack_timer = $AttackTimer
@@ -182,6 +183,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and can_dash and !is_dashing:
 		perform_dash()
 
+	if direction and movement_input_monitoring == Vector2(true, true):
+		velocity.x = direction * (SPEED * 0.6)
+	
 	if is_dashing:
 		velocity = dash_direction * DASH_SPEED
 		animated_sprite.play("dash")  # Add a dash animation
@@ -250,16 +254,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			jump_buffer_timer = jump_buffer_time
 	
-	# Handle movement with acceleration and deceleration
-	if movement_input_monitoring == Vector2(true, true):
-		if direction != 0:
-			# Apply acceleration based on whether player is on ground or in air
-			var current_acceleration = ACCELERATION if is_on_floor() else AIR_ACCELERATION
-			velocity.x = move_toward(velocity.x, direction * SPEED, current_acceleration * delta)
-		else:
-			# Apply deceleration based on whether player is on ground or in air
-			var current_deceleration = DECELERATION if is_on_floor() else AIR_DECELERATION
-			velocity.x = move_toward(velocity.x, 0, current_deceleration * delta)
+	# Handle movement based on input monitoring
+	if direction and movement_input_monitoring == Vector2(true, true):
+		velocity.x = direction * SPEED
+	elif movement_input_monitoring == Vector2(true, true):
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	# Sprite direction
 	if is_on_wall_state:
@@ -363,3 +362,42 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 		if parent.has_method("take_damage"):
 			parent.take_damage()
 			enemies_hit.append(parent)
+
+# Player death handling
+func _on_player_died():
+	# Stop all animations and movement
+	velocity = Vector2.ZERO
+	is_dashing = false
+	is_attacking = false
+	attack_loop_playing = false
+	
+	# Play death animation if you have one, or use a default animation
+	if animated_sprite:
+		# Stop any current animations
+		animated_sprite.stop()
+		# Play death animation if it exists, otherwise play idle
+		if animated_sprite.sprite_frames.has_animation("death"):
+			animated_sprite.play("death")
+		else:
+			animated_sprite.play("idle")
+	
+	# Disable collision during death sequence
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.set_deferred("disabled", true)
+
+# Player respawn handling
+func _on_player_respawned():
+	# Reset player state
+	velocity = Vector2.ZERO
+	is_dashing = false
+	is_attacking = false
+	attack_loop_playing = false
+	has_double_jump = true
+	
+	# Re-enable collision
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.set_deferred("disabled", false)
+	
+	# Play idle animation
+	if animated_sprite:
+		animated_sprite.play("idle")
