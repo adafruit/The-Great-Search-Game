@@ -1,0 +1,238 @@
+extends CharacterBody2D
+
+class_name ImprovedFlyingEnemy
+
+# Enemy properties
+@export var float_speed: float = 40.0
+@export var chase_speed: float = 150.0
+@export var detection_radius: float = 200.0
+@export var float_radius: float = 50.0
+@export var float_frequency: float = 1.5
+@export var respawn_time: float = 3.0  # Time it takes to respawn
+@export var shake_intensity: float = 5.0  # How much the enemy shakes when self-destructing
+@export var shake_duration: float = 0.5  # How long the enemy shakes before exploding
+
+# State machine
+enum State {
+	PATROL,
+	CHASE,
+	ATTACK,
+	DEATH,
+	RESPAWN
+}
+
+# Internal variables
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
+@onready var collision_shape: CollisionShape2D = $CollisionShape
+@onready var detection_area: Area2D = $DetectionArea
+@onready var hit_box: Area2D = $Hitbox
+
+var value: int = 1
+var current_state: State = State.PATROL
+var player_ref: CharacterBody2D = null
+var float_timer: float = 0.0
+var home_position: Vector2
+var original_position: Vector2
+var respawn_timer: float = 0.0
+var is_shaking: bool = false
+var shake_timer: float = 0.0
+var original_sprite_position: Vector2
+
+func _ready() -> void:
+	add_to_group("enemy")
+	
+	# Store original position for respawning
+	original_position = global_position
+	home_position = global_position
+	
+	# Store original sprite position for shake effect
+	original_sprite_position = animated_sprite.position
+	
+	# Connect signals for detection and collision
+	if !detection_area.body_entered.is_connected(_on_detection_area_body_entered):
+		detection_area.body_entered.connect(_on_detection_area_body_entered)
+	
+	if !detection_area.body_exited.is_connected(_on_detection_area_body_exited):
+		detection_area.body_exited.connect(_on_detection_area_body_exited)
+	
+	if !hit_box.body_entered.is_connected(_on_hit_box_body_entered):
+		hit_box.body_entered.connect(_on_hit_box_body_entered)
+
+func _physics_process(delta: float) -> void:
+	match current_state:
+		State.PATROL:
+			patrol_behavior(delta)
+		State.CHASE:
+			chase_behavior(delta)
+		State.ATTACK:
+			attack_behavior(delta)
+		State.DEATH:
+			death_behavior(delta)
+		State.RESPAWN:
+			respawn_behavior(delta)
+	
+	# Apply shake effect when self-destructing
+	if is_shaking:
+		shake_timer += delta
+		if shake_timer < shake_duration:
+			# Apply random shake offset
+			animated_sprite.position = original_sprite_position + Vector2(
+				randf_range(-shake_intensity, shake_intensity),
+				randf_range(-shake_intensity, shake_intensity)
+			)
+		else:
+			# Reset position and trigger explosion
+			animated_sprite.position = original_sprite_position
+			is_shaking = false
+			trigger_death_animation()
+	
+	# Apply movement
+	move_and_slide()
+
+func patrol_behavior(delta: float) -> void:
+	# Float around in a pattern
+	float_timer += delta * float_frequency
+	
+	# Calculate a floating pattern using sine and cosine for smooth movement
+	var offset_x = sin(float_timer) * float_radius
+	var offset_y = cos(float_timer * 0.7) * (float_radius * 0.6)
+	
+	var target_position = home_position + Vector2(offset_x, offset_y)
+	var direction = (target_position - global_position).normalized()
+	
+	velocity = direction * float_speed
+	
+	# Update animation
+	if velocity.x > 0:
+		animated_sprite.flip_h = false
+	elif velocity.x < 0:
+		animated_sprite.flip_h = true
+	
+	# Play idle animation if not already playing
+	if animated_sprite.animation != "idle":
+		animated_sprite.play("idle")
+
+func chase_behavior(delta: float) -> void:
+	if player_ref == null:
+		transition_to_state(State.PATROL)
+		return
+		
+	var direction = (player_ref.global_position - global_position).normalized()
+	velocity = direction * chase_speed
+	
+	# Update animation based on movement direction
+	if velocity.x > 0:
+		animated_sprite.flip_h = false
+	elif velocity.x < 0:
+		animated_sprite.flip_h = true
+	
+	# If player gets too far, return to patrol
+	if global_position.distance_to(player_ref.global_position) > detection_radius * 1.2:
+		transition_to_state(State.PATROL)
+	
+	# If player is close enough, transition to attack
+	if global_position.distance_to(player_ref.global_position) < 30:
+		transition_to_state(State.ATTACK)
+	
+	# Continue playing idle animation while chasing
+	if animated_sprite.animation != "idle":
+		animated_sprite.play("idle")
+
+func attack_behavior(delta: float) -> void:
+	# Enemy has reached the player and will self-destruct
+	velocity = Vector2.ZERO
+	
+	# Start shaking before exploding
+	if !is_shaking:
+		is_shaking = true
+		shake_timer = 0.0
+
+func death_behavior(delta: float) -> void:
+	# Death animation is playing, don't move
+	velocity = Vector2.ZERO
+	
+	# Animation is handled by the trigger_death_animation function
+
+func respawn_behavior(delta: float) -> void:
+	# Count down respawn timer
+	respawn_timer -= delta
+	
+	if respawn_timer <= 0:
+		# Respawn the enemy
+		global_position = original_position
+		home_position = original_position
+		
+		# Reset collision
+		collision_shape.set_deferred("disabled", false)
+		hit_box.set_deferred("monitoring", true)
+		detection_area.set_deferred("monitoring", true)
+		
+		# Reset visual and state
+		modulate.a = 1.0
+		transition_to_state(State.PATROL)
+
+func transition_to_state(new_state: State) -> void:
+	# Exit actions for current state
+	match current_state:
+		State.DEATH:
+			# Reset for respawn
+			respawn_timer = respawn_time
+	
+	# Enter actions for new state
+	match new_state:
+		State.PATROL:
+			player_ref = null
+		State.ATTACK:
+			velocity = Vector2.ZERO
+		State.DEATH:
+			# Handled by trigger_death_animation
+			pass
+		State.RESPAWN:
+			# Make enemy invisible
+			modulate.a = 0.0
+			
+			# Disable collisions while respawning
+			collision_shape.set_deferred("disabled", true)
+			hit_box.set_deferred("monitoring", false)
+			detection_area.set_deferred("monitoring", false)
+	
+	current_state = new_state
+
+func trigger_death_animation() -> void:
+	# Increase player score
+	Global.sparkysVanquished += value
+	Global.update_score.emit()
+	
+	# Play death animation
+	if animated_sprite.sprite_frames.has_animation("death"):
+		animated_sprite.play("death")
+		
+		# Wait for animation to finish, then start respawn
+		await animated_sprite.animation_finished
+		transition_to_state(State.RESPAWN)
+
+func take_damage() -> void:
+	# Player attacked the enemy
+	transition_to_state(State.DEATH)
+	trigger_death_animation()
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player_ref = body
+		if current_state == State.PATROL:
+			transition_to_state(State.CHASE)
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player") and body == player_ref:
+		# Don't set player_ref to null, just transition to patrol if we were chasing
+		if current_state == State.CHASE:
+			transition_to_state(State.PATROL)
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and current_state != State.DEATH and current_state != State.RESPAWN:
+		# We hit the player, self-destruct
+		transition_to_state(State.ATTACK)
+		
+		# If player has take_damage method, call it
+		if body.has_method("take_damage"):
+			body.take_damage()
