@@ -470,49 +470,49 @@ position = Vector2(32, -1)
 sprite_frames = SubResource("SpriteFrames_uy56o")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.0299503
+frame_progress = 0.00838856
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(96, -1)
 sprite_frames = SubResource("SpriteFrames_15bss")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.854203
+frame_progress = 0.540366
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(160, -1)
 sprite_frames = SubResource("SpriteFrames_8witg")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.648724
+frame_progress = 0.334885
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(224, -1)
 sprite_frames = SubResource("SpriteFrames_m5ula")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.790514
+frame_progress = 0.476678
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(288, -1)
 sprite_frames = SubResource("SpriteFrames_ruewt")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.168014
+frame_progress = 0.854174
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(352, -1)
 sprite_frames = SubResource("SpriteFrames_cdftu")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.773231
+frame_progress = 0.459394
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(416, -1)
 sprite_frames = SubResource("SpriteFrames_wqo4j")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.15298
+frame_progress = 0.839141
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(480, -1)

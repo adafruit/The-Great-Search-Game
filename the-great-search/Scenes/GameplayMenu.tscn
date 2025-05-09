@@ -246,7 +246,7 @@ position = Vector2(-297, 81)
 scale = Vector2(7.10716, 7.09328)
 sprite_frames = SubResource("SpriteFrames_sg4hy")
 autoplay = "default"
-frame_progress = 0.832404
+frame_progress = 0.793946
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2

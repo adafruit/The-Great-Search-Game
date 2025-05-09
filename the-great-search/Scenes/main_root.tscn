@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://3kewjg58qwc5"]
+[gd_scene load_steps=77 format=4 uid="uid://3kewjg58qwc5"]
 
 [ext_resource type="Texture2D" uid="uid://cxqnhrxdck4w1" path="res://Assests/Tiles/Tiles.png" id="1_08axb"]
 [ext_resource type="Script" path="res://Scenes/main_root.gd" id="1_vk6df"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://db4xrwukxsj6m" path="res://Assests/CameraOffsetArea/camera_offset_area.tscn" id="40_dw1mh"]
 [ext_resource type="PackedScene" uid="uid://mfvhfyhr6dhj" path="res://Scenes/zoomCameraArea.tscn" id="41_66qxh"]
 [ext_resource type="PackedScene" uid="uid://xrlaxkvu40vv" path="res://Scenes/CameraLimitArea/camera_limit_area.tscn" id="41_f1yat"]
+[ext_resource type="PackedScene" uid="uid://dedsmfo7rf5uh" path="res://Assests/sparkyCountBoardReq.tscn" id="45_xuoik"]
 
 [sub_resource type="Animation" id="Animation_js6tw"]
 length = 30.0
@@ -3187,7 +3188,6 @@ position = Vector2(607, 1560)
 scale = Vector2(4.37611, 4.37611)
 
 [node name="GUI" parent="." instance=ExtResource("24_sf02g")]
-visible = false
 
 [node name="Movement Joystick" parent="GUI" instance=ExtResource("25_wuaqd")]
 visible = false
@@ -3765,6 +3765,7 @@ position = Vector2(2283, -389.357)
 
 [node name="JumpItem4" parent="Jump Item(Beginner)" instance=ExtResource("21_nqq74")]
 position = Vector2(2283, -437.407)
+script = null
 
 [node name="JumpItem5" parent="Jump Item(Beginner)" instance=ExtResource("21_nqq74")]
 position = Vector2(2283, -485.458)
@@ -3843,8 +3844,8 @@ texture = ExtResource("28_2go06")
 [node name="TrainDoor" parent="." instance=ExtResource("32_5jqwi")]
 position = Vector2(1408, 1286.37)
 
-[node name="Area2D2" parent="." instance=ExtResource("27_0u1et")]
-position = Vector2(1293, 1297.94)
+[node name="SceneTransition" parent="." instance=ExtResource("27_0u1et")]
+position = Vector2(1304, 1297.38)
 load_level = "res://Scenes/Level 1-Factory 1.tscn"
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("33_87bce")]
@@ -3853,6 +3854,7 @@ collision_mask = 2
 
 [node name="FlyingEnemy2" parent="." instance=ExtResource("33_87bce")]
 position = Vector2(1384, 525.557)
+detection_radius = 400.0
 
 [node name="FlyingEnemy3" parent="." instance=ExtResource("33_87bce")]
 position = Vector2(1528, 501.531)
@@ -4001,7 +4003,6 @@ position_offset = Vector2(0, 200)
 
 [node name="Cannon13" parent="." instance=ExtResource("20_lhov3")]
 position = Vector2(128, -199.211)
-cycle_time = 2.0
 
 [node name="PlatformA" parent="." instance=ExtResource("20_2616f")]
 position = Vector2(1472, 608.645)
@@ -4010,3 +4011,7 @@ position = Vector2(1472, 608.645)
 visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("29_1fe4g")]
+
+[node name="BlankMessage" parent="." instance=ExtResource("45_xuoik")]
+position = Vector2(1304, 1241.32)
+scale = Vector2(1.22136, 1.22136)

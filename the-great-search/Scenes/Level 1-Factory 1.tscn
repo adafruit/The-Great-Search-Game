@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b5qc8oii0uths"]
+[gd_scene load_steps=47 format=4 uid="uid://b5qc8oii0uths"]
 
 [ext_resource type="PackedScene" uid="uid://u260qyqrimvh" path="res://Scenes/camera_2d.tscn" id="1_43bhc"]
 [ext_resource type="Texture2D" uid="uid://boerutef4q0v7" path="res://Assests/Tiles/spritesheet-purple.png" id="1_xloh6"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cr27txwm78jpn" path="res://Scenes/lightingRay.tscn" id="22_j1byu"]
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="23_kwdem"]
 [ext_resource type="PackedScene" uid="uid://41nt62ras272" path="res://Scenes/improvedPlat.tscn" id="24_a0b0i"]
+[ext_resource type="PackedScene" uid="uid://dcgerl7fuvtwq" path="res://Assests/camera_limit_area_improved.tscn" id="25_q2mlw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u21o4"]
 texture = ExtResource("1_xloh6")
@@ -16302,8 +16303,8 @@ _data = {
 }
 
 [node name="Level 1" type="Node2D"]
-metadata/_edit_vertical_guides_ = [2304.0, 640.0, 656.0, 2560.0, 3200.0, 664.0, 648.0, 3856.0]
-metadata/_edit_horizontal_guides_ = [-784.0, -768.0, -776.0, -2512.0, 312.0, -1792.0]
+metadata/_edit_vertical_guides_ = [2304.0, 640.0, 656.0, 2560.0, 3200.0, 664.0, 648.0, 3856.0, -640.0]
+metadata/_edit_horizontal_guides_ = [-784.0, -768.0, -776.0, -2512.0, 312.0, -1792.0, 272.0, -48.0, -56.0]
 
 [node name="Background Layer" type="TileMapLayer" parent="."]
 z_index = -10
@@ -16331,7 +16332,7 @@ tile_map_data = PackedByteArray("AADd/xYAAAATAA8AAADe/xYAAAAUAA8AAADf/xYAAAAVAA8
 tile_set = SubResource("TileSet_dmp8k")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_a1sjl")]
-position = Vector2(2816, -2016)
+position = Vector2(-536, 176)
 scale = Vector2(1.42394, 1.4444)
 
 [node name="Camera2D" parent="." groups=["main_camera"] instance=ExtResource("1_43bhc")]
@@ -16730,3 +16731,13 @@ libraries = {
 }
 autoplay = "new_animation_3"
 speed_scale = 0.448
+
+[node name="camera_limit_area_improved" parent="." groups=["camera_limit_area"] instance=ExtResource("25_q2mlw")]
+position = Vector2(-328, 128)
+scale = Vector2(32.2493, 18.0057)
+collision_layer = 2
+collision_mask = 2
+left_limit = -640.0
+top_limit = -56.0
+bottom_limit = 272.0
+restore_camera_mode = false

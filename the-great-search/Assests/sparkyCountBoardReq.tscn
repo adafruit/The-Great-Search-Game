@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dedsmfo7rf5uh"]
+
+[ext_resource type="Texture2D" uid="uid://c1h0urr6ubw8n" path="res://Assests/Tiles/blank message.png" id="1_gysyn"]
+[ext_resource type="Script" path="res://level1ReqBoard.gd" id="2_y45pc"]
+[ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="3_qv4ef"]
+[ext_resource type="Texture2D" uid="uid://px8pojkc28ta" path="res://Assests/Sparky-TGS-Death.png" id="4_r54ac"]
+
+[node name="BlankMessage" type="Sprite2D"]
+position = Vector2(3616, 1970.5)
+scale = Vector2(3.40625, 3.40625)
+texture = ExtResource("1_gysyn")
+script = ExtResource("2_y45pc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 12.9174
+offset_top = -4.25688
+offset_right = 28.9174
+offset_bottom = 11.7431
+theme_override_fonts/font = ExtResource("3_qv4ef")
+text = "6"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -7.63302
+offset_top = -3.9633
+offset_right = 8.36698
+offset_bottom = 12.0367
+theme_override_fonts/font = ExtResource("3_qv4ef")
+text = "/"
+
+[node name="sparkyCount" type="Label" parent="."]
+offset_left = -26.422
+offset_top = -3.9633
+offset_right = -10.422
+offset_bottom = 12.0367
+theme_override_fonts/font = ExtResource("3_qv4ef")
+text = "0
+"
+
+[node name="Sparky-tgs-death" type="Sprite2D" parent="."]
+position = Vector2(0.293579, -9.54126)
+scale = Vector2(0.189714, 0.189714)
+texture = ExtResource("4_r54ac")

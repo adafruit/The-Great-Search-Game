@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgerl7fuvtwq"]
+
+[ext_resource type="Script" path="res://Scenes/CameraLimitArea/camera_limit_area_fixed.gd" id="1_a2fbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y74w"]
+
+[node name="camera_limit_area_improved" type="Area2D"]
+script = ExtResource("1_a2fbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5y74w")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

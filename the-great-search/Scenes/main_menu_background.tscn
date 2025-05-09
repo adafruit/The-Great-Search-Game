@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ed3v2tl4kr78" path="res://Scenes/MainMenu-Gold.tscn" id="14_e38gp"]
 [ext_resource type="PackedScene" uid="uid://djfs81tg2ut4l" path="res://Scenes/doubleJumpGem.tscn" id="15_jpfeb"]
 [ext_resource type="AudioStream" uid="uid://cvryb2w7pjjow" path="res://Assests/SFX/ada_loop_250121_v03_newlocation_v07_arrange_v010.mp3" id="17_0cgqf"]
-[ext_resource type="Texture2D" uid="uid://cur7p0nd0ykhu" path="res://Assests/adafruit_the_great_search_pixel_logo.png" id="17_803l3"]
+[ext_resource type="PackedScene" uid="uid://dbqeb4jwljxaq" path="res://Assests/TGS Logo/tgs_animated_logo.tscn" id="17_wwrx5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x7fj"]
 animations = [{
@@ -127,10 +127,6 @@ autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="AdafruitTheGreatSearchPixelLogo" type="Sprite2D" parent="."]
-position = Vector2(71, 208)
-texture = ExtResource("17_803l3")
-
 [node name="Jump Item Holder" type="Node2D" parent="."]
 
 [node name="Node2D" parent="Jump Item Holder" instance=ExtResource("15_jpfeb")]
@@ -228,3 +224,6 @@ modulate = Color(0.862728, 0.862602, 7.70092e-07, 1)
 self_modulate = Color(0.943394, 0.943394, 2.31028e-06, 1)
 position = Vector2(-104, 327)
 scale = Vector2(1.122, 1.122)
+
+[node name="TGSAnimatedLogo" parent="." instance=ExtResource("17_wwrx5")]
+position = Vector2(68, 222)

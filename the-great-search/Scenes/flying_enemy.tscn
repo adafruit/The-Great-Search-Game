@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cl1vo7up1kajq"]
 
-[ext_resource type="Script" path="res://sparky_improved.gd" id="1_r0kjj"]
+[ext_resource type="Script" path="res://sparky.gd" id="1_1okww"]
 [ext_resource type="Texture2D" uid="uid://wwwe0qlv7es8" path="res://Assests/Sparky-TGS.png" id="2_t0n4d"]
 [ext_resource type="Texture2D" uid="uid://b55cno7hoh0f0" path="res://Assests/DoubleJumpGem/blue explosion/explosion 1.png" id="3_47ebv"]
 [ext_resource type="Texture2D" uid="uid://dajmbty8vugq4" path="res://Assests/DoubleJumpGem/hud lantern light.png" id="3_nxvml"]
@@ -81,7 +81,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_183l3"]
-radius = 257.018
+radius = 105.575
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kwrgt"]
 radius = 16.2788
@@ -90,7 +90,7 @@ radius = 16.2788
 radius = 15.0333
 
 [node name="FlyingEnemy" type="CharacterBody2D" groups=["enemy"]]
-script = ExtResource("1_r0kjj")
+script = ExtResource("1_1okww")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.1

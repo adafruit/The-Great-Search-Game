@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name ImprovedFlyingEnemy
+#class_name ImprovedFlyingEnemy
 
 # Enemy properties
 @export var float_speed: float = 40.0

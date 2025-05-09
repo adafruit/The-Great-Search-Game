@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cur7p0nd0ykhu"
-path="res://.godot/imported/adafruit_the_great_search_pixel_logo.png-801a5dd3e73a9a63ca41a7de1b2a5ee2.ctex"
+uid="uid://c1h0urr6ubw8n"
+path="res://.godot/imported/blank message.png-80fa0a8c5615bbdc19dfe86ca40c68f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/adafruit_the_great_search_pixel_logo.png"
-dest_files=["res://.godot/imported/adafruit_the_great_search_pixel_logo.png-801a5dd3e73a9a63ca41a7de1b2a5ee2.ctex"]
+source_file="res://Assests/Tiles/blank message.png"
+dest_files=["res://.godot/imported/blank message.png-80fa0a8c5615bbdc19dfe86ca40c68f5.ctex"]
 
 [params]
 

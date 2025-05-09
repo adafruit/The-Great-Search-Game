@@ -6,7 +6,7 @@ I've created an improved flying enemy script that implements patrol, self-destru
 
 1. **Use the new script**:
    - Open your FlyingEnemy scene in Godot
-   - In the Inspector panel, change the script from `sparky.gd` to `sparky_improved.gd`
+   - In the Inspector panel, change the script from `sparky.gd` to `sparky_improved_fixed.gd`
 
 2. **Configure parameters** (optional):
    - `float_speed`: How fast the enemy floats during patrol (default: 40)
@@ -16,6 +16,21 @@ I've created an improved flying enemy script that implements patrol, self-destru
    - `respawn_time`: How long it takes for the enemy to respawn (default: 3 seconds)
    - `shake_intensity`: How much the enemy shakes before exploding (default: 5)
    - `shake_duration`: How long the enemy shakes before exploding (default: 0.5 seconds)
+
+3. **IMPORTANT: Proper Collision Setup**:
+   The enemy has two different collision areas that serve different purposes:
+   
+   - **DetectionArea**: This is a large area for detecting when the player is nearby
+     - Should be set to Layer 0, Mask 2 (player layer)
+     - Player attacks should NOT hit this area
+     - Only used for starting the chase behavior
+   
+   - **Hitbox**: This is the actual enemy body that can be damaged
+     - Should be set to Layer 4 (enemy layer), Mask 2 (player layer)
+     - This is what the player needs to attack to damage the enemy
+     - Also causes damage to the player on contact
+
+   The script will automatically set these collision properties when it loads.
 
 ## New Behaviors
 
@@ -35,8 +50,8 @@ The improved enemy now has these behaviors:
    - Damages the player on contact
 
 4. **Death & Respawn**:
-   - When the enemy is attacked by player or self-destructs
-   - Plays death animation with puff of smoke
+   - Enemy can only be killed by attacking its hitbox, not its detection area
+   - When attacked, plays death animation with puff of smoke
    - Becomes invisible during respawn period
    - Reappears at original position after respawn timer completes
 
@@ -50,9 +65,10 @@ The script requires these animations in your AnimatedSprite2D:
 ## Technical Details
 
 - Uses a state machine pattern for cleaner behavior management
-- Properly handles collision enabling/disabling during different states
+- Properly distinguishes between detection area and hitbox
 - Includes visual effects like shaking before exploding
 - Updates the global score counter when destroyed
+- Fixes null reference issues and protects against edge cases
 
 ## Behavior Flow
 

@@ -51,19 +51,37 @@ func _ready() -> void:
     else:
         push_error("AnimatedSprite not found! Make sure it's named 'AnimatedSprite'")
     
-    # Connect signals for detection and collision
+    # Connect signals for detection area - ONLY for detecting player presence
     if detection_area:
-        if !detection_area.body_entered.is_connected(_on_detection_area_body_entered):
-            detection_area.body_entered.connect(_on_detection_area_body_entered)
+        # Clear any existing connections to avoid duplicate signals
+        if detection_area.body_entered.is_connected(_on_detection_area_body_entered):
+            detection_area.body_entered.disconnect(_on_detection_area_body_entered)
         
-        if !detection_area.body_exited.is_connected(_on_detection_area_body_exited):
-            detection_area.body_exited.connect(_on_detection_area_body_exited)
+        if detection_area.body_exited.is_connected(_on_detection_area_body_exited):
+            detection_area.body_exited.disconnect(_on_detection_area_body_exited)
+            
+        # Connect detection area signals
+        detection_area.body_entered.connect(_on_detection_area_body_entered)
+        detection_area.body_exited.connect(_on_detection_area_body_exited)
+        
+        # Make sure detection area is set up correctly
+        detection_area.collision_layer = 0  # No collision, just detection
+        detection_area.collision_mask = 2   # Detect player layer
     else:
         push_error("DetectionArea not found! Make sure it's named 'DetectionArea'")
     
+    # Connect signals for hitbox - Used for damage and player collision
     if hit_box:
-        if !hit_box.body_entered.is_connected(_on_hit_box_body_entered):
-            hit_box.body_entered.connect(_on_hit_box_body_entered)
+        # Clear any existing connections
+        if hit_box.body_entered.is_connected(_on_hit_box_body_entered):
+            hit_box.body_entered.disconnect(_on_hit_box_body_entered)
+            
+        # Connect hitbox signal
+        hit_box.body_entered.connect(_on_hit_box_body_entered)
+        
+        # Set up hitbox collision properly
+        hit_box.collision_layer = 4  # Enemy hitbox layer
+        hit_box.collision_mask = 2   # Detect player layer
     else:
         push_error("Hitbox not found! Make sure it's named 'Hitbox'")
 
@@ -247,11 +265,15 @@ func trigger_death_animation() -> void:
         transition_to_state(State.RESPAWN)
 
 func take_damage() -> void:
-    # Player attacked the enemy
-    transition_to_state(State.DEATH)
-    trigger_death_animation()
+    # This method is called when the player's attack hits the enemy
+    # Only the hitbox area should trigger this, not the detection area
+    if current_state != State.DEATH and current_state != State.RESPAWN:
+        print("Enemy taking damage!")
+        transition_to_state(State.DEATH)
+        trigger_death_animation()
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
+    # Only use the detection area for sensing the player, NOT for damage
     if body and body.is_in_group("player"):
         player_ref = body as CharacterBody2D
         if current_state == State.PATROL:
