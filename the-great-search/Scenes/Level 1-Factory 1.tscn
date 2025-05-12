@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://b5qc8oii0uths"]
+[gd_scene load_steps=48 format=4 uid="uid://b5qc8oii0uths"]
 
 [ext_resource type="PackedScene" uid="uid://u260qyqrimvh" path="res://Scenes/camera_2d.tscn" id="1_43bhc"]
 [ext_resource type="Texture2D" uid="uid://boerutef4q0v7" path="res://Assests/Tiles/spritesheet-purple.png" id="1_xloh6"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="23_kwdem"]
 [ext_resource type="PackedScene" uid="uid://41nt62ras272" path="res://Scenes/improvedPlat.tscn" id="24_a0b0i"]
 [ext_resource type="PackedScene" uid="uid://dcgerl7fuvtwq" path="res://Assests/camera_limit_area_improved.tscn" id="25_q2mlw"]
+[ext_resource type="Script" path="res://Scenes/CameraLimitArea/camera_limit_area_improved.gd" id="26_pjkhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u21o4"]
 texture = ExtResource("1_xloh6")
@@ -16304,7 +16305,7 @@ _data = {
 
 [node name="Level 1" type="Node2D"]
 metadata/_edit_vertical_guides_ = [2304.0, 640.0, 656.0, 2560.0, 3200.0, 664.0, 648.0, 3856.0, -640.0]
-metadata/_edit_horizontal_guides_ = [-784.0, -768.0, -776.0, -2512.0, 312.0, -1792.0, 272.0, -48.0, -56.0]
+metadata/_edit_horizontal_guides_ = [-784.0, -768.0, -776.0, -2512.0, 312.0, -1792.0, 288.0, -48.0, -56.0]
 
 [node name="Background Layer" type="TileMapLayer" parent="."]
 z_index = -10
@@ -16532,7 +16533,7 @@ WARNING: Do not aim at Blue Smoke Monsters.
 board_signature = "- L.F"
 
 [node name="CameraLimitArea" parent="." groups=["camera_limit_area"] instance=ExtResource("10_tm62b")]
-position = Vector2(824, 96)
+position = Vector2(824, -1176)
 scale = Vector2(2.76001, 12.6)
 collision_layer = 2
 collision_mask = 2
@@ -16733,11 +16734,28 @@ autoplay = "new_animation_3"
 speed_scale = 0.448
 
 [node name="camera_limit_area_improved" parent="." groups=["camera_limit_area"] instance=ExtResource("25_q2mlw")]
-position = Vector2(-328, 128)
-scale = Vector2(32.2493, 18.0057)
+position = Vector2(400, 144)
+scale = Vector2(87.6493, 18.0057)
 collision_layer = 2
 collision_mask = 2
 left_limit = -640.0
 top_limit = -56.0
-bottom_limit = 272.0
+bottom_limit = 275.0
+auto_size_from_shape = false
 restore_camera_mode = false
+show_debug = false
+
+[node name="camera_limit_area_improved2" parent="." groups=["camera_limit_area"] instance=ExtResource("25_q2mlw")]
+position = Vector2(960, 2072)
+scale = Vector2(32.0093, 59.8857)
+collision_layer = 2
+collision_mask = 2
+priority = 1
+script = ExtResource("26_pjkhg")
+left_limit = 650.0
+right_limit = 1280.0
+top_limit = -1136.0
+bottom_limit = 300.0
+auto_size_from_shape = false
+restore_camera_mode = false
+show_debug = false

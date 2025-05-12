@@ -1,5 +1,5 @@
 extends Area2D
-class_name ImprovedCameraLimitArea
+#class_name ImprovedCameraLimitArea
 
 # Camera limit settings
 @export_group("Camera Limits")

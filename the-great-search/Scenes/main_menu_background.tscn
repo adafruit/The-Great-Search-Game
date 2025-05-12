@@ -227,3 +227,4 @@ scale = Vector2(1.122, 1.122)
 
 [node name="TGSAnimatedLogo" parent="." instance=ExtResource("17_wwrx5")]
 position = Vector2(68, 222)
+scale = Vector2(1.3, 1.3)
