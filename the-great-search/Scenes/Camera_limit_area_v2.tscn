@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8sixlodukxp"]
+
+[ext_resource type="Script" path="res://Scenes/simple_camera_limit.gd" id="1_cl36v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6lya"]
+
+[node name="CameraLimit" type="Area2D"]
+script = ExtResource("1_cl36v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p6lya")
