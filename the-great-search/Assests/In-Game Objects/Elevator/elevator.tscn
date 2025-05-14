@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c00khvt00a1ws"]
+
+[ext_resource type="Texture2D" uid="uid://dqf5ity7a078q" path="res://Assests/In-Game Objects/Elevator/image-elevator.png" id="1_7jyna"]
+[ext_resource type="Script" path="res://Scenes/interactArea.gd" id="2_wge22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox0vs"]
+size = Vector2(64, 64)
+
+[node name="Image-elevator" type="Sprite2D"]
+texture = ExtResource("1_7jyna")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("2_wge22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_ox0vs")
