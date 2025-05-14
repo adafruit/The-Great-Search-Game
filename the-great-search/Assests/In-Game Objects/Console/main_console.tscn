@@ -1,0 +1,179 @@
+[gd_scene load_steps=37 format=3 uid="uid://dx6eqgyfmdtjb"]
+
+[ext_resource type="Script" path="res://Assests/In-Game Objects/Console/main_console.gd" id="1_p88oe"]
+[ext_resource type="Texture2D" uid="uid://cpu04x55rbfhw" path="res://Assests/In-Game Objects/Console/Off/off.png" id="2_2eb7s"]
+[ext_resource type="Texture2D" uid="uid://dnkq33gpj6k50" path="res://Assests/In-Game Objects/Console/Error/frame0000.png" id="3_vtixp"]
+[ext_resource type="Texture2D" uid="uid://dx8b7xj5b2rlh" path="res://Assests/In-Game Objects/Console/Error/frame0001.png" id="4_adkrs"]
+[ext_resource type="Texture2D" uid="uid://b6a0m0f8548ob" path="res://Assests/In-Game Objects/Console/Error/frame0002.png" id="5_58x33"]
+[ext_resource type="Texture2D" uid="uid://5wxv1se3gts8" path="res://Assests/In-Game Objects/Console/Error/frame0003.png" id="6_3a7rk"]
+[ext_resource type="Texture2D" uid="uid://b1wx686l8mspx" path="res://Assests/In-Game Objects/Console/Error/frame0004.png" id="7_vhs5r"]
+[ext_resource type="Texture2D" uid="uid://dmymyn4mlp17f" path="res://Assests/In-Game Objects/Console/Error/frame0005.png" id="8_s7day"]
+[ext_resource type="Texture2D" uid="uid://dp0nanq8rm8b4" path="res://Assests/In-Game Objects/Console/Error/frame0006.png" id="9_wmfmd"]
+[ext_resource type="Texture2D" uid="uid://qoflnl0sgl55" path="res://Assests/In-Game Objects/Console/Error/frame0007.png" id="10_tcsg5"]
+[ext_resource type="Texture2D" uid="uid://c6xo2mewkqoxx" path="res://Assests/In-Game Objects/Console/Found/frame0000.png" id="11_e84q8"]
+[ext_resource type="Texture2D" uid="uid://824e6lglf0gs" path="res://Assests/In-Game Objects/Console/Loading/frame0000.png" id="11_wd1lc"]
+[ext_resource type="Texture2D" uid="uid://dv33li2ktjn2o" path="res://Assests/In-Game Objects/Console/Found/frame0005.png" id="12_d0at0"]
+[ext_resource type="Texture2D" uid="uid://dqx28h4v73og7" path="res://Assests/In-Game Objects/Console/Loading/frame0001.png" id="12_g0rre"]
+[ext_resource type="Texture2D" uid="uid://xvs51w20il2e" path="res://Assests/In-Game Objects/Console/Loading/frame0002.png" id="13_e5efm"]
+[ext_resource type="Texture2D" uid="uid://s4oy2fehyk5r" path="res://Assests/In-Game Objects/Console/Found/frame0001.png" id="13_ragru"]
+[ext_resource type="Texture2D" uid="uid://1bjof7xw5so1" path="res://Assests/In-Game Objects/Console/Found/frame0004.png" id="14_f26i8"]
+[ext_resource type="Texture2D" uid="uid://cjxfd10o2s6ac" path="res://Assests/In-Game Objects/Console/Loading/frame0003.png" id="14_jvimb"]
+[ext_resource type="Texture2D" uid="uid://dqefexpm31lrb" path="res://Assests/In-Game Objects/Console/Found/frame0002.png" id="15_64few"]
+[ext_resource type="Texture2D" uid="uid://bxnp5gqcfhsup" path="res://Assests/In-Game Objects/Console/Loading/frame0004.png" id="15_bpwc3"]
+[ext_resource type="Texture2D" uid="uid://cs0s200ywmm74" path="res://Assests/In-Game Objects/Console/Found/frame0003.png" id="16_p0bjm"]
+[ext_resource type="Texture2D" uid="uid://brj6c1gydb40t" path="res://Assests/In-Game Objects/Console/Loading/frame0005.png" id="16_qv1im"]
+[ext_resource type="Texture2D" uid="uid://dn274cfu3q1yx" path="res://Assests/In-Game Objects/Console/Loading/frame0006.png" id="17_hkyo6"]
+[ext_resource type="Texture2D" uid="uid://xhfhs234471f" path="res://Assests/In-Game Objects/Console/Loading/frame0007.png" id="18_weis3"]
+[ext_resource type="Texture2D" uid="uid://dofppu8bbmyw3" path="res://Assests/In-Game Objects/Console/Searching/frame0000.png" id="25_jnk6d"]
+[ext_resource type="Texture2D" uid="uid://ckbf7y2nyairv" path="res://Assests/In-Game Objects/Console/Searching/frame0001.png" id="26_tf2qu"]
+[ext_resource type="Texture2D" uid="uid://dm1ldfbeyd653" path="res://Assests/In-Game Objects/Console/Searching/frame0002.png" id="27_qjpam"]
+[ext_resource type="Texture2D" uid="uid://csm2co7vy83j5" path="res://Assests/In-Game Objects/Console/Searching/frame0003.png" id="28_y55g4"]
+[ext_resource type="Texture2D" uid="uid://cd7ff420rdn01" path="res://Assests/In-Game Objects/Console/Searching/frame0004.png" id="29_bqwq8"]
+[ext_resource type="Texture2D" uid="uid://biorloo2dn7rq" path="res://Assests/In-Game Objects/Console/Searching/frame0005.png" id="30_83th2"]
+[ext_resource type="Texture2D" uid="uid://vhccbgxhqwos" path="res://Assests/In-Game Objects/Console/Searching/frame0006.png" id="31_xgd87"]
+[ext_resource type="Texture2D" uid="uid://dtj4jj4yksgug" path="res://Assests/In-Game Objects/Console/Searching/frame0007.png" id="32_egmd4"]
+[ext_resource type="Texture2D" uid="uid://bt7psjm8hsqrv" path="res://Assests/In-Game Objects/Console/Searching/frame0008.png" id="33_1ltaq"]
+[ext_resource type="Texture2D" uid="uid://cgdgv24t68vgj" path="res://Assests/In-Game Objects/Console/Searching/frame0009.png" id="34_ggqtd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axowx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2eb7s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vtixp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_adkrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_58x33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3a7rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vhs5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s7day")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wmfmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tcsg5")
+}],
+"loop": true,
+"name": &"error",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_e84q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d0at0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ragru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f26i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_64few")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p0bjm")
+}],
+"loop": false,
+"name": &"found",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wd1lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g0rre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e5efm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jvimb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bpwc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qv1im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hkyo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_weis3")
+}],
+"loop": true,
+"name": &"loading",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jnk6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tf2qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qjpam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_y55g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bqwq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_83th2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xgd87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_egmd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1ltaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ggqtd")
+}],
+"loop": true,
+"name": &"searching",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okvgm"]
+size = Vector2(64, 64)
+
+[node name="Main Console" type="Area2D"]
+script = ExtResource("1_p88oe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_axowx")
+animation = &"found"
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_okvgm")

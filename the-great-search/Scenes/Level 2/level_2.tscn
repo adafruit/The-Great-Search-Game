@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://c5v3tcvi86un8"]
+[gd_scene load_steps=30 format=4 uid="uid://c5v3tcvi86un8"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_5xknq"]
 [ext_resource type="Texture2D" uid="uid://dgnthrtgom1wm" path="res://Assests/Tiles/spritesheet.png" id="1_283kh"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cemq5rquhls4g" path="res://Scenes/DialogueView.tscn" id="15_peia8"]
 [ext_resource type="PackedScene" uid="uid://gwrircurl2m8" path="res://Scenes/GameplayMenu.tscn" id="16_fsaam"]
 [ext_resource type="PackedScene" uid="uid://cl1vo7up1kajq" path="res://Scenes/flying_enemy.tscn" id="17_tr5pp"]
+[ext_resource type="PackedScene" uid="uid://dx6eqgyfmdtjb" path="res://Assests/In-Game Objects/Console/main_console.tscn" id="18_prwht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqu6c"]
 texture = ExtResource("1_283kh")
@@ -12082,3 +12083,6 @@ position = Vector2(2312, 184)
 
 [node name="FlyingEnemy4" parent="." instance=ExtResource("17_tr5pp")]
 position = Vector2(1168, -216)
+
+[node name="Main Console" parent="." instance=ExtResource("18_prwht")]
+position = Vector2(472, -48)
