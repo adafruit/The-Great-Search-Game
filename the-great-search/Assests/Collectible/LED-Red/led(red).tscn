@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dilv06b4sp10s"]
+
+[ext_resource type="Texture2D" uid="uid://br5ohdtdofh61" path="res://Assests/Collectible/LED-Red/image-LED(red).png" id="1_gixpp"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_887tw"]
+
+[node name="LED(Red)" type="Sprite2D"]
+texture = ExtResource("1_gixpp")
+
+[node name="Collectible" parent="." instance=ExtResource("2_887tw")]
+scale = Vector2(1.16831, 2.55073)

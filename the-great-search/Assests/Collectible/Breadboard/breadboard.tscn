@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvrtks2u7v7l8"]
+
+[ext_resource type="Texture2D" uid="uid://cf4qlrtsht6f0" path="res://Assests/Collectible/Breadboard/image-breadboard.png" id="1_t2k0m"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_gc7sf"]
+
+[node name="Breadboard" type="Sprite2D"]
+texture = ExtResource("1_t2k0m")
+
+[node name="Collectible" parent="." instance=ExtResource("2_gc7sf")]
+scale = Vector2(2.10614, 3.82981)

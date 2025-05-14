@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7ifaeqnglumo"]
 
 [ext_resource type="Texture2D" uid="uid://dnav53exy1ind" path="res://Assests/image-cpb.png" id="1_wj3n1"]
-[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="2_50rxp"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_50rxp"]
 
 [node name="CircuitPlaygroundBluefruit" type="Sprite2D"]
 scale = Vector2(0.0712226, 0.0712226)

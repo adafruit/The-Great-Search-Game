@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqlmetybmpbt"]
+
+[ext_resource type="Texture2D" uid="uid://tixk7b324uk0" path="res://Assests/Collectible/Transistor/image-transitor.png" id="1_08kpx"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_d3urg"]
+
+[node name="Transitor" type="Sprite2D"]
+texture = ExtResource("1_08kpx")
+
+[node name="Collectible" parent="." instance=ExtResource("2_d3urg")]
+scale = Vector2(1.16831, 2.55073)

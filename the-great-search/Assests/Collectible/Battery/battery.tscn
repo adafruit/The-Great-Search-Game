@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35spy3ghbn15"]
+
+[ext_resource type="Texture2D" uid="uid://cfcbgy3bjoe1f" path="res://Assests/Collectible/Battery/image-Battery.png" id="1_wfyv5"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_bseqe"]
+
+[node name="Battery" type="Sprite2D"]
+texture = ExtResource("1_wfyv5")
+
+[node name="Collectible" parent="." instance=ExtResource("2_bseqe")]
+scale = Vector2(1.02734, 2.39299)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjwhj4u8nea5o"]
+
+[ext_resource type="Texture2D" uid="uid://dstduy85yk3n6" path="res://Assests/Collectible/Sparkle Motion/image-Sparkle Motion.png" id="1_sd2wb"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_55nk7"]
+
+[node name="SparkleMotion" type="Sprite2D"]
+texture = ExtResource("1_sd2wb")
+
+[node name="Collectible" parent="." instance=ExtResource("2_55nk7")]
+scale = Vector2(1.16831, 2.55073)

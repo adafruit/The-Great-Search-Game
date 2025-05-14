@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3yrwkusg6ket"]
+
+[ext_resource type="Texture2D" uid="uid://b016isdxhs761" path="res://Assests/Collectible/ProtoDoubler/image-Adafruit Proto Doubler PiCowbell for Pico and PicoW.png" id="1_nd1d0"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_dd3t2"]
+
+[node name="ProtoDoubler" type="Sprite2D"]
+texture = ExtResource("1_nd1d0")
+
+[node name="Collectible" parent="." instance=ExtResource("2_dd3t2")]
+scale = Vector2(4.10009, 5.65852)

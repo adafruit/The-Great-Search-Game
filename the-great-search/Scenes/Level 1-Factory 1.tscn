@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dmacb6kon3a7e" path="res://Scenes/Small_spark_1.tscn" id="8_0fcyf"]
 [ext_resource type="PackedScene" uid="uid://dxjm1m6f8pnj5" path="res://Assests/characters/walking_robot_small.tscn" id="9_jo06v"]
 [ext_resource type="PackedScene" uid="uid://xrlaxkvu40vv" path="res://Scenes/CameraLimitArea/camera_limit_area.tscn" id="10_tm62b"]
-[ext_resource type="PackedScene" uid="uid://1x8ccmgwxs02" path="res://Assests/Collectible/BME280-collectible.tscn" id="12_2f4xb"]
-[ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040-collectible.tscn" id="13_7sgs6"]
-[ext_resource type="PackedScene" uid="uid://bcvyxglr6ie8a" path="res://Assests/Collectible/CPB-collectible.tscn" id="13_lu5we"]
+[ext_resource type="PackedScene" uid="uid://1x8ccmgwxs02" path="res://Assests/Collectible/BME280/BME280-collectible.tscn" id="12_2f4xb"]
+[ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040/Feather RP2040-collectible.tscn" id="13_7sgs6"]
+[ext_resource type="PackedScene" uid="uid://bcvyxglr6ie8a" path="res://Assests/Collectible/CPB/CPB-collectible.tscn" id="13_lu5we"]
 [ext_resource type="PackedScene" uid="uid://cdmdv6441vngl" path="res://Scenes/mainGUI.tscn" id="14_hfawn"]
 [ext_resource type="PackedScene" uid="uid://cemq5rquhls4g" path="res://Scenes/DialogueView.tscn" id="15_kpg2w"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="15_lwk13"]
@@ -16265,6 +16265,21 @@ _data = {
 "new_animation_3": SubResource("Animation_omluy")
 }
 
+[sub_resource type="Animation" id="Animation_2xreg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_npcg2"]
 resource_name = "new_animation"
 length = 5.0
@@ -16280,21 +16295,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_2xreg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_peg1q"]

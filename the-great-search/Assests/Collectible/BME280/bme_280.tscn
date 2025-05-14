@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btuasoo5134mw"]
 
 [ext_resource type="Texture2D" uid="uid://0f6yd81pvqvr" path="res://Assests/image-bme280.png" id="1_io8pd"]
-[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="2_fsj04"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_fsj04"]
 
 [node name="BME280" type="Sprite2D"]
 scale = Vector2(0.308351, 0.308351)

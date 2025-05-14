@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://doc1pjmquj3o4"]
+
+[ext_resource type="Texture2D" uid="uid://bm0mj6e1ftc76" path="res://Assests/Collectible/LED-Green/image- LED (green).png" id="1_n812p"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_egicm"]
+
+[node name="LED-Green" type="Sprite2D"]
+texture = ExtResource("1_n812p")
+
+[node name="Collectible" parent="." instance=ExtResource("2_egicm")]
+scale = Vector2(0.859413, 2.09786)

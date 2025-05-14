@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn61dj3yfqrah"]
+
+[ext_resource type="Texture2D" uid="uid://de2d4qbedw3i7" path="res://Assests/Collectible/Potentiometer/image-Potentiometers.png" id="1_aeuwi"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_ncf16"]
+
+[node name="Potentiometers" type="Sprite2D"]
+texture = ExtResource("1_aeuwi")
+
+[node name="Collectible" parent="." instance=ExtResource("2_ncf16")]
+scale = Vector2(1.16831, 2.55073)

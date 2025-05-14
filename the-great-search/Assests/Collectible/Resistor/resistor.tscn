@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg6f2pgn5jey2"]
+
+[ext_resource type="Texture2D" uid="uid://3176657sblol" path="res://Assests/Collectible/Resistor/image-resistor.png" id="1_pqwia"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_xtf3g"]
+
+[node name="Resistor" type="Sprite2D"]
+position = Vector2(1248, 1400)
+texture = ExtResource("1_pqwia")
+
+[node name="Collectible" parent="." instance=ExtResource("2_xtf3g")]
+scale = Vector2(3.68831, 2.55073)

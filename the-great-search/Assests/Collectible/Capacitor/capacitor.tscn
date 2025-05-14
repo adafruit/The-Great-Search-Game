@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgibbvdh0rqfe"]
+
+[ext_resource type="Texture2D" uid="uid://cgbu3movnn78u" path="res://Assests/Collectible/Capacitor/image-cap.png" id="1_d2kx1"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_qpkq3"]
+
+[node name="Cap" type="Sprite2D"]
+texture = ExtResource("1_d2kx1")
+
+[node name="Collectible" parent="." instance=ExtResource("2_qpkq3")]
+scale = Vector2(1.16831, 2.55073)

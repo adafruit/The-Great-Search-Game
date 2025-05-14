@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcvyxglr6ie8a"]
 
-[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="1_yamcw"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="1_yamcw"]
 [ext_resource type="Texture2D" uid="uid://dnav53exy1ind" path="res://Assests/image-cpb.png" id="2_kvuyt"]
 
 [node name="Collectible" instance=ExtResource("1_yamcw")]

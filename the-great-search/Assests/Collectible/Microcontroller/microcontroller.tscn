@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cynfyrt4vh5u"]
+
+[ext_resource type="Texture2D" uid="uid://00lm5soc8esb" path="res://Assests/Collectible/Microcontroller/image-Microcontroller.png" id="1_3ak8b"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_s280a"]
+
+[node name="Microcontroller" type="Sprite2D"]
+texture = ExtResource("1_3ak8b")
+
+[node name="Collectible" parent="." instance=ExtResource("2_s280a")]
+scale = Vector2(1.16831, 2.55073)

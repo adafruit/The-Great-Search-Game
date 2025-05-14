@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8gx7g0m48kht"]
 
 [ext_resource type="Texture2D" uid="uid://df8uqw1rv60yb" path="res://Assests/imagerp2040.png" id="1_2u6ye"]
-[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/collectible.tscn" id="2_0x87e"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_0x87e"]
 
 [node name="Feather RP2040" type="Sprite2D"]
 texture = ExtResource("1_2u6ye")

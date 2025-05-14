@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://duav31ydt4r44"]
+
+[ext_resource type="Texture2D" uid="uid://hvjxtxald1wc" path="res://Assests/Collectible/Diode/image-diode.png" id="1_bd78b"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_5gvi0"]
+
+[node name="Diode" type="Sprite2D"]
+texture = ExtResource("1_bd78b")
+
+[node name="Collectible" parent="." instance=ExtResource("2_5gvi0")]
+scale = Vector2(3.27757, 2.80746)

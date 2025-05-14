@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dliim1q8pgj5h"]
+
+[ext_resource type="Texture2D" uid="uid://cy7iohjo0kjf1" path="res://Assests/Collectible/Metro2040/image-Metro 2040.png" id="1_8x05n"]
+[ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_xwdsp"]
+
+[node name="Metro2040" type="Sprite2D"]
+texture = ExtResource("1_8x05n")
+
+[node name="Collectible" parent="." instance=ExtResource("2_xwdsp")]
+scale = Vector2(1.16831, 2.55073)
