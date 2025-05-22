@@ -16554,6 +16554,7 @@ right_limit = 3200.0
 top_limit = -2512.0
 bottom_limit = -785.0
 transition_time = 1.0
+show_debug = false
 
 [node name="CameraLimitArea4" parent="." groups=["camera_limit_area"] instance=ExtResource("10_tm62b")]
 position = Vector2(2872, -2056)
@@ -16565,6 +16566,7 @@ right_limit = 3856.0
 top_limit = -2512.0
 bottom_limit = -1792.0
 transition_time = 2.0
+show_debug = false
 
 [node name="CameraLimitArea2" parent="." groups=["camera_limit_area"] instance=ExtResource("10_tm62b")]
 position = Vector2(983, -984)
@@ -16576,6 +16578,7 @@ right_limit = 3200.0
 top_limit = -1150.0
 bottom_limit = -785.0
 transition_time = 1.0
+show_debug = false
 
 [node name="Collectible2" parent="." instance=ExtResource("13_lu5we")]
 position = Vector2(752, -400)
@@ -16596,6 +16599,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="GUI" parent="." instance=ExtResource("14_hfawn")]
+visible = false
 
 [node name="Movement Joystick" parent="GUI" instance=ExtResource("15_lwk13")]
 visible = false

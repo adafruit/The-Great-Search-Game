@@ -8,3 +8,5 @@ texture = ExtResource("1_8x05n")
 
 [node name="Collectible" parent="." instance=ExtResource("2_xwdsp")]
 scale = Vector2(1.16831, 2.55073)
+collision_layer = 2
+collision_mask = 2

@@ -2770,7 +2770,6 @@ tile_map_data = PackedByteArray("AAC///v/AQABAAEAAAC///z/AQABAAEAAAC///3/AQABAAE
 tile_set = SubResource("TileSet_6m3ps")
 
 [node name="AI Images" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Bench" parent="AI Images" instance=ExtResource("13_6gi2c")]
 z_index = -1
@@ -3538,50 +3537,8 @@ position = Vector2(110, -3)
 [node name="Coin18" parent="Coins/PlacedRootNode/Row Of 7" instance=ExtResource("23_3cbij")]
 position = Vector2(137, -3)
 
-[node name="Row Of 17" type="Node2D" parent="Coins/PlacedRootNode"]
-position = Vector2(1544, 1160)
-
-[node name="Coin13" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(5, -3)
-
-[node name="Coin14" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(30, -3)
-
-[node name="Coin15" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(57, -3)
-
-[node name="Coin16" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(85, -3)
-
-[node name="Coin17" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(110, -3)
-
-[node name="Coin18" parent="Coins/PlacedRootNode/Row Of 17" instance=ExtResource("23_3cbij")]
-position = Vector2(137, -3)
-
-[node name="Row Of 18" type="Node2D" parent="Coins/PlacedRootNode"]
-position = Vector2(1544, 1128)
-
-[node name="Coin13" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(5, -3)
-
-[node name="Coin14" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(30, -3)
-
-[node name="Coin15" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(57, -3)
-
-[node name="Coin16" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(85, -3)
-
-[node name="Coin17" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(110, -3)
-
-[node name="Coin18" parent="Coins/PlacedRootNode/Row Of 18" instance=ExtResource("23_3cbij")]
-position = Vector2(137, -3)
-
 [node name="Row Of 19" type="Node2D" parent="Coins/PlacedRootNode"]
-position = Vector2(1544, 1096)
+position = Vector2(1531, 1047.12)
 
 [node name="Coin13" parent="Coins/PlacedRootNode/Row Of 19" instance=ExtResource("23_3cbij")]
 position = Vector2(5, -3)
@@ -3620,48 +3577,6 @@ position = Vector2(85, -3)
 position = Vector2(110, -3)
 
 [node name="Coin18" parent="Coins/PlacedRootNode/Row Of 20" instance=ExtResource("23_3cbij")]
-position = Vector2(137, -3)
-
-[node name="Row Of 21" type="Node2D" parent="Coins/PlacedRootNode"]
-position = Vector2(1264, 1016)
-
-[node name="Coin13" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(5, -3)
-
-[node name="Coin14" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(30, -3)
-
-[node name="Coin15" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(57, -3)
-
-[node name="Coin16" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(85, -3)
-
-[node name="Coin17" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(110, -3)
-
-[node name="Coin18" parent="Coins/PlacedRootNode/Row Of 21" instance=ExtResource("23_3cbij")]
-position = Vector2(137, -3)
-
-[node name="Row Of 22" type="Node2D" parent="Coins/PlacedRootNode"]
-position = Vector2(1264, 984)
-
-[node name="Coin13" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
-position = Vector2(5, -3)
-
-[node name="Coin14" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
-position = Vector2(30, -3)
-
-[node name="Coin15" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
-position = Vector2(57, -3)
-
-[node name="Coin16" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
-position = Vector2(85, -3)
-
-[node name="Coin17" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
-position = Vector2(110, -3)
-
-[node name="Coin18" parent="Coins/PlacedRootNode/Row Of 22" instance=ExtResource("23_3cbij")]
 position = Vector2(137, -3)
 
 [node name="Node2D" parent="Coins/PlacedRootNode" instance=ExtResource("21_nqq74")]
@@ -3776,6 +3691,8 @@ position = Vector2(1856, -136)
 [node name="Safe House" parent="." instance=ExtResource("27_0u1et")]
 position = Vector2(16, -115.122)
 scale = Vector2(0.44, 1.3574)
+monitoring = false
+monitorable = false
 load_level = "res://Scenes/Apt Scene/Objects/game_lobby_0.tscn"
 
 [node name="Respawn Zone" parent="." instance=ExtResource("28_vro7o")]
@@ -3846,7 +3763,7 @@ position = Vector2(1408, 1286.37)
 
 [node name="SceneTransition" parent="." instance=ExtResource("27_0u1et")]
 position = Vector2(1304, 1297.38)
-load_level = "res://Scenes/Level 1-Factory 1.tscn"
+load_level = "res://Scenes/Level 2/level_2.tscn"
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("33_87bce")]
 position = Vector2(496, -171.182)
@@ -3993,6 +3910,7 @@ zoom_speed = 4.0
 position_offset = Vector2(-10, 30)
 
 [node name="zoomCameraArea2" parent="." instance=ExtResource("41_66qxh")]
+visible = false
 position = Vector2(-240, 704.747)
 scale = Vector2(3.44, 1.12013)
 collision_layer = 2
@@ -4008,7 +3926,6 @@ position = Vector2(128, -199.211)
 position = Vector2(1472, 608.645)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("29_1fe4g")]
 

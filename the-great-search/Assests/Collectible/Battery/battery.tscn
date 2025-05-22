@@ -3,8 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://cfcbgy3bjoe1f" path="res://Assests/Collectible/Battery/image-Battery.png" id="1_wfyv5"]
 [ext_resource type="PackedScene" uid="uid://bkxmfv0w04mbc" path="res://Assests/Collectible/1 Collectible/collectible.tscn" id="2_bseqe"]
 
-[node name="Battery" type="Sprite2D"]
-texture = ExtResource("1_wfyv5")
+[node name="Collectible" instance=ExtResource("2_bseqe")]
 
-[node name="Collectible" parent="." instance=ExtResource("2_bseqe")]
-scale = Vector2(1.02734, 2.39299)
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.936897, -3.18036)
+scale = Vector2(0.857031, 0.789853)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2.38419e-07, -3.57628e-07)
+scale = Vector2(0.8, 0.5)
+texture = ExtResource("1_wfyv5")

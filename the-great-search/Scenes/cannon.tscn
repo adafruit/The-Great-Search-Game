@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://rj1pcy2b4knw"]
 
-[ext_resource type="Script" path="res://Scenes/cannon_simple.gd" id="1_4b8vc"]
+[ext_resource type="Script" path="res://Scenes/cannon.gd" id="1_ccixa"]
 [ext_resource type="Texture2D" uid="uid://cghhxf1faliiu" path="res://Assests/cannon/beamLight.png" id="2_6t3ye"]
 [ext_resource type="Texture2D" uid="uid://bcoo2pagw3c67" path="res://Assests/cannon/beam 1.png" id="2_uncb2"]
 [ext_resource type="Texture2D" uid="uid://bvibox2d26can" path="res://Assests/cannon/beam25.png" id="3_3iw0r"]
@@ -461,7 +461,7 @@ animations = [{
 size = Vector2(448, 17)
 
 [node name="Cannon" type="Node2D"]
-script = ExtResource("1_4b8vc")
+script = ExtResource("1_ccixa")
 
 [node name="Position2D" type="Marker2D" parent="."]
 
@@ -470,49 +470,49 @@ position = Vector2(32, -1)
 sprite_frames = SubResource("SpriteFrames_uy56o")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.00838856
+frame = 5
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(96, -1)
 sprite_frames = SubResource("SpriteFrames_15bss")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.540366
+frame = 5
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(160, -1)
 sprite_frames = SubResource("SpriteFrames_8witg")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.334885
+frame = 5
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(224, -1)
 sprite_frames = SubResource("SpriteFrames_m5ula")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.476678
+frame = 5
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(288, -1)
 sprite_frames = SubResource("SpriteFrames_ruewt")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.854174
+frame = 5
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(352, -1)
 sprite_frames = SubResource("SpriteFrames_cdftu")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.459394
+frame = 5
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(416, -1)
 sprite_frames = SubResource("SpriteFrames_wqo4j")
 animation = &"lightning"
 autoplay = "lightning"
-frame_progress = 0.839141
+frame = 5
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Position2D" groups=["beam"]]
 position = Vector2(480, -1)
@@ -520,7 +520,6 @@ sprite_frames = SubResource("SpriteFrames_0vqxr")
 animation = &"lightning"
 autoplay = "lightning"
 frame = 5
-frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
