@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cemq5rquhls4g"]
+[gd_scene load_steps=4 format=3 uid="uid://cemq5rquhls4g"]
 
 [ext_resource type="Script" path="res://Scenes/dialogue_view.gd" id="1_4tbvu"]
 [ext_resource type="FontFile" uid="uid://ciccmoeuai2eb" path="res://Assests/Fonts/PressStart2P-Regular.ttf" id="2_kidlh"]
+[ext_resource type="PackedScene" uid="uid://b5tiqvdrt48ae" path="res://Assests/close_button.tscn" id="3_851sn"]
 
 [node name="DialogueView" type="Control" groups=["dialogue_view"]]
 layout_mode = 3
@@ -68,3 +69,6 @@ text = "Secondary
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Close Button" parent="." instance=ExtResource("3_851sn")]
+position = Vector2(891, 986)

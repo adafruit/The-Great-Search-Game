@@ -21,6 +21,17 @@ func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		respawn_manager.set_respawn_point(player.global_position)
+		
+	# Display welcome message using DialogueView
+	var dialogue_view = get_tree().get_first_node_in_group("dialogue_view")
+	if dialogue_view:
+		dialogue_view.show_dialogue(
+			"Welcome to The Great Search", 
+			"Your adventure begins now! Explore the world and discover its mysteries.",
+			"Press [E] to continue"
+		)
+		# Mark this as the welcome message so it can be dismissed with the interaction key
+		dialogue_view.is_welcome_message = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

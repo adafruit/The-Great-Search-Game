@@ -11,6 +11,7 @@ var dialogue_view = null
 # State tracking
 var active_areas = []
 var can_interact = true
+var waiting_for_dialogue_close = false
 
 # References
 var player: Node2D
@@ -72,18 +73,26 @@ func _input(event):
 		if current_area.is_message && dialogue_view != null:
 			print("Showing dialogue for message: " + current_area.message_title)
 			
-			dialogue_view.title.text = current_area.message_title
-			dialogue_view.body.text = current_area.message_body
-			dialogue_view.secondary.text = current_area.message_secondary
-			dialogue_view.visible = true
+			# Set dialogue_view content
+			dialogue_view.show_dialogue(
+				current_area.message_title,
+				current_area.message_body,
+				current_area.message_secondary
+			)
+			
+			# Make sure it's not marked as a welcome message
+			dialogue_view.is_welcome_message = false
 			
 			await get_tree().create_timer(0.2).timeout
 			
-			var waiting_for_input = true
-			while waiting_for_input:
+			# Set flag that we're waiting for dialogue to close
+			waiting_for_dialogue_close = true
+			
+			# Wait for interaction button press or close button press
+			while waiting_for_dialogue_close:
 				if Input.is_action_just_pressed("interaction"):
-					dialogue_view.visible = false
-					waiting_for_input = false
+					dialogue_view.hide_dialogue()
+					waiting_for_dialogue_close = false
 				await get_tree().process_frame
 		else:
 			await current_area.interact.call()
@@ -110,3 +119,8 @@ func find_node_by_group_recursive(node: Node, group_name: String) -> Control:
 			return found
 			
 	return null
+	
+# Called when the dialogue is closed by the close button
+func dialogue_closed_by_button():
+	print("Dialogue closed by button")
+	waiting_for_dialogue_close = false

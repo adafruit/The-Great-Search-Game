@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cu4rnsnpapqlv"]
+
+[ext_resource type="Texture2D" uid="uid://dwfaxsefrhom8" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-2.png" id="1_soq0a"]
+[ext_resource type="Texture2D" uid="uid://bvu2gksp5jiav" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-3.png" id="2_qaluk"]
+[ext_resource type="Texture2D" uid="uid://gq30u84q1bvb" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-4.png" id="3_qipt6"]
+[ext_resource type="Texture2D" uid="uid://drwsvdo1dqlad" path="res://Assests/Magic Pack 3 files/sprites/small-spark-2/small-spark-5.png" id="4_6os7i"]
+[ext_resource type="PackedScene" uid="uid://dpcag8kva10k8" path="res://Scenes/killzone.tscn" id="5_grpui"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1ny3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_soq0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qaluk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qipt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6os7i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_monwq"]
+radius = 8.0
+
+[node name="Telsa Orb A" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_g1ny3")
+autoplay = "default"
+frame_progress = 0.593998
+
+[node name="Killzone" parent="." instance=ExtResource("5_grpui")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_monwq")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck0tq2c0i0n81"]
+
+[ext_resource type="Texture2D" uid="uid://c0gefhuggfkdc" path="res://Assests/Ceiling Sentry/Ceiling Sentry.png" id="1_bp0fx"]
+[ext_resource type="PackedScene" uid="uid://cu4rnsnpapqlv" path="res://Assests/Ceiling Sentry/telsa_orb_a.tscn" id="2_ftbsb"]
+[ext_resource type="PackedScene" uid="uid://dfgceqrapoaga" path="res://Assests/Ceiling Sentry/animated_spark_1.tscn" id="3_0m6gm"]
+
+[sub_resource type="Animation" id="Animation_k0qsi"]
+resource_name = "new_animation"
+length = 2.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nswgf"]
+_data = {
+"new_animation": SubResource("Animation_k0qsi")
+}
+
+[node name="Tesla Sentry 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_bp0fx")
+
+[node name="Telsa Orb A2" parent="." instance=ExtResource("2_ftbsb")]
+visible = false
+position = Vector2(32, 16)
+scale = Vector2(2, 2)
+frame_progress = 0.926839
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Telsa Orb A" parent="Node2D" instance=ExtResource("2_ftbsb")]
+position = Vector2(-34, 16)
+scale = Vector2(1.85, 1.85)
+frame_progress = 0.0108429
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Telsa Orb A"]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_nswgf")
+}
+
+[node name="Animated Spark 1" parent="." instance=ExtResource("3_0m6gm")]
+visible = false
+position = Vector2(-40, 24)
