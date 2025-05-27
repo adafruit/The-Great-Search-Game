@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://3kewjg58qwc5"]
+[gd_scene load_steps=78 format=4 uid="uid://3kewjg58qwc5"]
 
 [ext_resource type="Texture2D" uid="uid://cxqnhrxdck4w1" path="res://Assests/Tiles/Tiles.png" id="1_08axb"]
 [ext_resource type="Script" path="res://Scenes/main_root.gd" id="1_vk6df"]
@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://mfvhfyhr6dhj" path="res://Scenes/zoomCameraArea.tscn" id="41_66qxh"]
 [ext_resource type="PackedScene" uid="uid://xrlaxkvu40vv" path="res://Scenes/CameraLimitArea/camera_limit_area.tscn" id="41_f1yat"]
 [ext_resource type="PackedScene" uid="uid://dedsmfo7rf5uh" path="res://Assests/sparkyCountBoardReq.tscn" id="45_xuoik"]
+[ext_resource type="PackedScene" uid="uid://dghpfui6qkra3" path="res://Assests/required_transition.tscn" id="46_oo17s"]
 
 [sub_resource type="Animation" id="Animation_js6tw"]
 length = 30.0
@@ -2835,7 +2836,7 @@ tile_set = SubResource("TileSet_8oq47")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_2x2ou")]
 z_index = 1
-position = Vector2(152, -136.144)
+position = Vector2(8, -176.187)
 scale = Vector2(1.18523, 1.2)
 
 [node name="Killzone" parent="." instance=ExtResource("4_iw7ms")]
@@ -3245,6 +3246,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2(-595, -54.0626)
+scale = Vector2(0.99988, 1)
 
 [node name="Structured Coin" type="Node2D" parent="Coins"]
 
@@ -3782,6 +3784,8 @@ position = Vector2(1408, 1286.37)
 
 [node name="SceneTransition" parent="." instance=ExtResource("27_0u1et")]
 position = Vector2(1304, 1297.38)
+monitoring = false
+monitorable = false
 load_level = "res://Scenes/Level 2/level_2.tscn"
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("33_87bce")]
@@ -3952,3 +3956,12 @@ visible = false
 [node name="BlankMessage" parent="." instance=ExtResource("45_xuoik")]
 position = Vector2(1304, 1241.32)
 scale = Vector2(1.22136, 1.22136)
+
+[node name="Transition Scene" parent="." instance=ExtResource("46_oo17s")]
+position = Vector2(1224, 1289.37)
+scale = Vector2(3.08777, 3.03052)
+collision_layer = 0
+collision_mask = 9
+target_scene = "res://Scenes/Level 2/level_2.tscn"
+neopixels_required = 10
+sparkys_required = 6

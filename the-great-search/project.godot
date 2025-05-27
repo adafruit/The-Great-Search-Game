@@ -24,6 +24,7 @@ SceneTransitionObject="res://SceneTransition.gd"
 SceneTransition="*res://Scenes/Apt Scene/Objects/scene_transition.tscn"
 RespawnGlobal="*res://Scripts/respawn_global.gd"
 CollectibleSingleton="*res://Assests/Collectible/1 Collectible/CollectibleSingleton.tscn"
+SceneRequirements="*res://SceneRequirements.gd"
 
 [display]
 
