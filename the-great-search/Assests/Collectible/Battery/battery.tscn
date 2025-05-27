@@ -11,5 +11,5 @@ scale = Vector2(0.857031, 0.789853)
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(2.38419e-07, -3.57628e-07)
-scale = Vector2(0.8, 0.5)
+scale = Vector2(0.8, 0.820001)
 texture = ExtResource("1_wfyv5")

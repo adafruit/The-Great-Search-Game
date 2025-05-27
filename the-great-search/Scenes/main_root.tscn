@@ -3041,18 +3041,9 @@ board_signature = "- Adabot"
 
 [node name="MessageBoard" parent="." groups=["dialogue_view"] instance=ExtResource("10_oj8vn")]
 position = Vector2(149, -118.063)
-board_title = "Help!"
-board_content = "
-
-
-
-Eliminate all traces of the Blue Smoke Monsters.
-
-They’re mostly harmless — but incredibly invasive! 
-
-
-
-"
+board_title = "Blue Smoke Rumble"
+board_content = "Eliminate 6 Blue Smoke Monsters
+They’re mostly harmless — but incredibly invasive!"
 board_signature = "- Facilities"
 
 [node name="LightningRay7" parent="." instance=ExtResource("16_rfcb6")]
@@ -3181,7 +3172,6 @@ rotation = 0.00463978
 scale = Vector2(0.410115, 1.629)
 
 [node name="Train2" parent="." instance=ExtResource("3_d2f3j")]
-visible = false
 z_index = -2
 position = Vector2(607, 1560)
 scale = Vector2(4.37611, 4.37611)
@@ -3189,7 +3179,6 @@ scale = Vector2(4.37611, 4.37611)
 [node name="GUI" parent="." instance=ExtResource("24_sf02g")]
 
 [node name="Movement Joystick" parent="GUI" instance=ExtResource("25_wuaqd")]
-visible = false
 modulate = Color(1, 1, 1, 0.196078)
 material = SubResource("ShaderMaterial_ddmeh")
 action_left = "move_left"
@@ -3197,29 +3186,59 @@ action_right = "move_right"
 action_up = "jump"
 action_down = ""
 
-[node name="Attack" type="TouchScreenButton" parent="GUI"]
-visible = false
-modulate = Color(0, 0.266333, 0.94, 0.196078)
-position = Vector2(1400, 824)
-scale = Vector2(4.185, 4.185)
+[node name="Buttons" type="Node2D" parent="GUI"]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(1584, 872)
+rotation = 0.790586
+scale = Vector2(1, 0.99894)
+
+[node name="Attack" type="TouchScreenButton" parent="GUI/Buttons"]
+modulate = Color(0, 0.266667, 0.941176, 1)
+position = Vector2(-192.272, 12.3242)
+rotation = -0.799358
+scale = Vector2(3, 3.003)
 texture_normal = ExtResource("26_psyi3")
 shape = SubResource("CircleShape2D_epn6q")
 action = "attack"
 visibility_mode = 1
 
-[node name="Jump" type="TouchScreenButton" parent="GUI"]
-visible = false
-modulate = Color(1, 1, 1, 0.196078)
-position = Vector2(1653, 826)
-scale = Vector2(4.18531, 4.18531)
+[node name="Jump" type="TouchScreenButton" parent="GUI/Buttons"]
+position = Vector2(-11.3137, 0.0585976)
+rotation = -0.799358
+scale = Vector2(3, 3.003)
 texture_normal = ExtResource("26_psyi3")
 shape = SubResource("CircleShape2D_ui84q")
 action = "jump"
 visibility_mode = 1
 
+[node name="SlowMo" type="TouchScreenButton" parent="GUI/Buttons"]
+modulate = Color(0.984314, 1, 1, 1)
+self_modulate = Color(0.577271, 0.319058, 1, 1)
+position = Vector2(10.3745, -181.268)
+rotation = -0.799358
+scale = Vector2(3, 3.003)
+texture_normal = ExtResource("26_psyi3")
+shape = SubResource("CircleShape2D_epn6q")
+action = "slow_time"
+visibility_mode = 1
+
+[node name="Dash" type="TouchScreenButton" parent="GUI/Buttons"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(-170.584, -169.002)
+rotation = -0.799358
+scale = Vector2(3, 3.003)
+texture_normal = ExtResource("26_psyi3")
+shape = SubResource("CircleShape2D_ui84q")
+action = "dash"
+visibility_mode = 1
+
 [node name="DialogueView" parent="GUI" instance=ExtResource("37_vf2kx")]
-offset_top = -59.0
-offset_bottom = -59.0
+visible = false
+offset_left = 0.000244141
+offset_top = -58.9999
+offset_right = 0.000244141
+offset_bottom = -58.9999
 size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
@@ -3926,6 +3945,7 @@ position = Vector2(128, -199.211)
 position = Vector2(1472, 608.645)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("29_1fe4g")]
 

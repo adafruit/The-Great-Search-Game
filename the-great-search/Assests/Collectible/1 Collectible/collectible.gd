@@ -48,7 +48,9 @@ func collect(collector: Node2D) -> void:
 	
 	# Signal the collection
 	collected.emit(type, value)
-	
+	Global.keyCollectibles += value
+	print(Global.keyCollectibles)
+	Global.update_score.emit()
 	# Visual feedback
 	var camera = get_viewport().get_camera_2d()
 	if camera:

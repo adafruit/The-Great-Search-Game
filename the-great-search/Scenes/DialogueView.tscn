@@ -71,4 +71,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Close Button" parent="." instance=ExtResource("3_851sn")]
-position = Vector2(891, 986)
+position = Vector2(837, 988)

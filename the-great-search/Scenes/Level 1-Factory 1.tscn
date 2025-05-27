@@ -1,6 +1,7 @@
-[gd_scene load_steps=48 format=4 uid="uid://b5qc8oii0uths"]
+[gd_scene load_steps=49 format=4 uid="uid://b5qc8oii0uths"]
 
 [ext_resource type="PackedScene" uid="uid://u260qyqrimvh" path="res://Scenes/camera_2d.tscn" id="1_43bhc"]
+[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_jg0lt"]
 [ext_resource type="Texture2D" uid="uid://boerutef4q0v7" path="res://Assests/Tiles/spritesheet-purple.png" id="1_xloh6"]
 [ext_resource type="PackedScene" uid="uid://brbogp2ycbsun" path="res://Scenes/player.tscn" id="2_a1sjl"]
 [ext_resource type="Texture2D" uid="uid://27c3kmn87ocv" path="res://Assests/1_Industrial_Tileset_1B.png" id="2_tt4tu"]
@@ -16304,6 +16305,7 @@ _data = {
 }
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_jg0lt")
 metadata/_edit_vertical_guides_ = [2304.0, 640.0, 656.0, 2560.0, 3200.0, 664.0, 648.0, 3856.0, -640.0]
 metadata/_edit_horizontal_guides_ = [-784.0, -768.0, -776.0, -2512.0, 312.0, -1792.0, 288.0, -48.0, -56.0]
 

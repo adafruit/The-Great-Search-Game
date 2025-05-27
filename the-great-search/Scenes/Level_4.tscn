@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=4 uid="uid://c6ho4dgq8fcqw"]
+[gd_scene load_steps=44 format=4 uid="uid://c6ho4dgq8fcqw"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_2mgiy"]
+[ext_resource type="Script" path="res://Scenes/level_4.gd" id="1_6h844"]
 [ext_resource type="Texture2D" uid="uid://dgnthrtgom1wm" path="res://Assests/Tiles/spritesheet.png" id="2_cpogf"]
 [ext_resource type="Texture2D" uid="uid://boerutef4q0v7" path="res://Assests/Tiles/spritesheet-purple.png" id="3_3l6ba"]
 [ext_resource type="PackedScene" uid="uid://brbogp2ycbsun" path="res://Scenes/player.tscn" id="3_y2waq"]
@@ -8247,7 +8248,8 @@ _data = {
 "RESET": SubResource("Animation_ot31q")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Level 4" type="Node2D"]
+script = ExtResource("1_6h844")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8, 0)

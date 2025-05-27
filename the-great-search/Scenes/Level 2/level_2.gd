@@ -26,9 +26,9 @@ func _ready() -> void:
 	var dialogue_view = get_tree().get_first_node_in_group("dialogue_view")
 	if dialogue_view:
 		dialogue_view.show_dialogue(
-			"Blue Smoke Rumble!", 
-			"Eliminate 6 Blue Smoke Monsters",
-			"They’re mostly harmless — but incredibly invasive!"
+			"Welcome to The Great Search", 
+			"Your adventure begins now! Explore the world and discover its mysteries.",
+			"Press [E] to continue"
 		)
 		# Mark this as the welcome message so it can be dismissed with the interaction key
 		dialogue_view.is_welcome_message = true
