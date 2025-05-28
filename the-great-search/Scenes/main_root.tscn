@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://mfvhfyhr6dhj" path="res://Scenes/zoomCameraArea.tscn" id="41_66qxh"]
 [ext_resource type="PackedScene" uid="uid://xrlaxkvu40vv" path="res://Scenes/CameraLimitArea/camera_limit_area.tscn" id="41_f1yat"]
 [ext_resource type="PackedScene" uid="uid://dedsmfo7rf5uh" path="res://Assests/sparkyCountBoardReq.tscn" id="45_xuoik"]
-[ext_resource type="PackedScene" path="res://Assests/required_transition.tscn" id="46_o0i6v"]
+[ext_resource type="PackedScene" uid="uid://c4x4kdeojnmfm" path="res://Assests/required_transition.tscn" id="46_o0i6v"]
 
 [sub_resource type="Animation" id="Animation_js6tw"]
 length = 30.0
@@ -3763,7 +3763,7 @@ texture = ExtResource("28_2go06")
 position = Vector2(1408, 1286.37)
 
 [node name="SceneTransition" parent="." instance=ExtResource("27_0u1et")]
-position = Vector2(1304, 1297.38)
+position = Vector2(1720, 1289.37)
 load_level = "res://Scenes/Level 2/level_2.tscn"
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("33_87bce")]
@@ -3935,4 +3935,10 @@ position = Vector2(1304, 1241.32)
 scale = Vector2(1.22136, 1.22136)
 
 [node name="Transition Manager" parent="." instance=ExtResource("46_o0i6v")]
-position = Vector2(1192, 1273.35)
+position = Vector2(1320, 1297.38)
+scale = Vector2(5.9602, 2.25626)
+collision_layer = 8
+collision_mask = 3
+target_scene = "res://Scenes/Level 2/level_2.tscn"
+neopixels_required = 1
+sparkys_required = 1

@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040/Feather RP2040-collectible.tscn" id="23_i27tk"]
 [ext_resource type="PackedScene" uid="uid://cw3vul18aogpx" path="res://Scenes/Apt Scene/transitionStreetToLobby.tscn" id="24_d4bdj"]
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="25_y7x4a"]
-[ext_resource type="PackedScene" path="res://Assests/required_transition.tscn" id="27_x3j1r"]
+[ext_resource type="PackedScene" uid="uid://c4x4kdeojnmfm" path="res://Assests/required_transition.tscn" id="27_x3j1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqu6c"]
 texture = ExtResource("1_283kh")
@@ -12131,7 +12131,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="SceneTransition" parent="." instance=ExtResource("24_d4bdj")]
-position = Vector2(520, -224)
+position = Vector2(568, -64)
 collision_layer = 2
 collision_mask = 2
 load_level = "res://Scenes/Level 1-Factory 1.tscn"
@@ -12185,6 +12185,7 @@ position = Vector2(1376, -1208)
 scale = Vector2(-0.839911, 1.37232)
 
 [node name="Transition Scene" parent="." instance=ExtResource("27_x3j1r")]
+visible = false
 position = Vector2(568, -48)
 scale = Vector2(3.08777, 3.03052)
 collision_layer = 0

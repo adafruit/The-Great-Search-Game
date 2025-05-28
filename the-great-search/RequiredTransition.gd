@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	# Check for interaction while player is in area
 	if player_in_area and Input.is_action_just_pressed("interaction"):
-		attempt_transition()
+		print("attempt_transition()")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -60,6 +60,8 @@ func _on_body_entered(body: Node2D) -> void:
 		# If requirements are not met, show dialogue
 		if show_requirement_message and not requirements_met:
 			show_requirements_dialogue()
+		else: 
+			attempt_transition()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
