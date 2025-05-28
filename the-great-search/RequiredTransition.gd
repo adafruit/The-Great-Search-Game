@@ -11,8 +11,18 @@ extends Area2D
 var player_in_area: bool = false
 
 func _ready() -> void:
+	# Wait a frame to ensure all autoloads are initialized
+	await get_tree().process_frame
+	
 	# Register requirements
-	if target_scene != "":
+	if target_scene != "" and has_node("/root/SceneRequirements"):
+		# Print values for debugging
+		print("Setting requirements for scene: ", target_scene)
+		print("Neopixels required: ", neopixels_required)
+		print("Sparkys required: ", sparkys_required)
+		print("Key collectibles required: ", key_collectibles_required)
+		
+		# Set the requirements
 		SceneRequirements.set_scene_requirements(
 			target_scene,
 			neopixels_required,
@@ -26,18 +36,29 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	# Check for interaction while player is in area
-	#if player_in_area and Input.is_action_just_pressed("interaction"):
-	#	attempt_transition()
-	print("process")
+	if player_in_area and Input.is_action_just_pressed("interaction"):
+		attempt_transition()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_area = true
 		
-		attempt_transition()
+		# Check requirements on entry
+		var requirements_met = false
+		
+		# Check if SceneRequirements singleton is available
+		if has_node("/root/SceneRequirements"):
+			requirements_met = SceneRequirements.are_requirements_met(target_scene)
+		else:
+			# Fallback to manual requirements check
+			requirements_met = (
+				Global.score >= neopixels_required &&
+				Global.sparkysVanquished >= sparkys_required &&
+				Global.keyCollectibles >= key_collectibles_required
+			)
 		
 		# If requirements are not met, show dialogue
-		if show_requirement_message and not SceneRequirements.are_requirements_met(target_scene):
+		if show_requirement_message and not requirements_met:
 			show_requirements_dialogue()
 
 func _on_body_exited(body: Node2D) -> void:
@@ -48,11 +69,31 @@ func attempt_transition() -> void:
 	if target_scene.is_empty():
 		return
 	
-	# Check requirements
-	if SceneRequirements.are_requirements_met(target_scene):
-		# All requirements met, do the transition
-		SceneTransition.change_scene(target_scene)
+	var requirements_met = false
+	
+	# Check if SceneRequirements singleton is available
+	if has_node("/root/SceneRequirements"):
+		requirements_met = SceneRequirements.are_requirements_met(target_scene)
 	else:
+		# Fallback to manual requirements check
+		requirements_met = (
+			Global.score >= neopixels_required &&
+			Global.sparkysVanquished >= sparkys_required &&
+			Global.keyCollectibles >= key_collectibles_required
+		)
+	
+	# Check requirements
+	if requirements_met:
+		print("Requirements met! Transitioning to: ", target_scene)
+		# All requirements met, do the transition
+		if has_node("/root/SceneTransition"):
+			SceneTransition.change_scene(target_scene)
+		else:
+			# Fallback if SceneTransition is not available
+			get_tree().change_scene_to_file(target_scene)
+	else:
+		print("Requirements NOT met for: ", target_scene)
+		print("Current values - Neopixels: ", Global.score, ", Sparkys: ", Global.sparkysVanquished, ", Keys: ", Global.keyCollectibles)
 		# Requirements not met, show dialogue
 		show_requirements_dialogue()
 
@@ -61,7 +102,24 @@ func show_requirements_dialogue() -> void:
 		dialogue_view = get_tree().get_first_node_in_group("dialogue_view")
 		
 	if dialogue_view:
-		var req_text = SceneRequirements.get_requirements_text(target_scene)
+		# Generate custom requirements text if SceneRequirements is not available
+		var req_text = ""
+		
+		if has_node("/root/SceneRequirements"):
+			req_text = SceneRequirements.get_requirements_text(target_scene)
+		else:
+			# Fallback manual requirements text
+			req_text = "Requirements to proceed:\n"
+			
+			if neopixels_required > 0:
+				req_text += "- Collect %d/%d Neopixels\n" % [min(Global.score, neopixels_required), neopixels_required]
+			
+			if sparkys_required > 0:
+				req_text += "- Defeat %d/%d Sparkys\n" % [min(Global.sparkysVanquished, sparkys_required), sparkys_required]
+				
+			if key_collectibles_required > 0:
+				req_text += "- Find %d/%d Key Items\n" % [min(Global.keyCollectibles, key_collectibles_required), key_collectibles_required]
+		
 		dialogue_view.show_dialogue(
 			"Path Blocked",
 			req_text,

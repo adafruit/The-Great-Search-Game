@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://c6ho4dgq8fcqw"]
+[gd_scene load_steps=44 format=4 uid="uid://clnaiu1lmpr7o"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_2mgiy"]
 [ext_resource type="Script" path="res://Scenes/level_4.gd" id="1_6h844"]
@@ -8025,6 +8025,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pwefm")
 sources/1 = SubResource("TileSetAtlasSource_yvck1")
 
+[sub_resource type="Animation" id="Animation_2y0w5"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_0mo38"]
 resource_name = "new_animation"
 length = 5.0
@@ -8042,13 +8045,25 @@ tracks/0/keys = {
 "values": [Vector2(1144, 264), Vector2(1144, 694.76)]
 }
 
-[sub_resource type="Animation" id="Animation_2y0w5"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_le7lp"]
 _data = {
 "RESET": SubResource("Animation_2y0w5"),
 "new_animation": SubResource("Animation_0mo38")
+}
+
+[sub_resource type="Animation" id="Animation_pk6lv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3768, -1098)]
 }
 
 [sub_resource type="Animation" id="Animation_ebvyk"]
@@ -8068,7 +8083,13 @@ tracks/0/keys = {
 "values": [Vector2(3768, -1098), Vector2(3768, -1528)]
 }
 
-[sub_resource type="Animation" id="Animation_pk6lv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_van5w"]
+_data = {
+"RESET": SubResource("Animation_pk6lv"),
+"new_animation": SubResource("Animation_ebvyk")
+}
+
+[sub_resource type="Animation" id="Animation_ksi42"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8080,13 +8101,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3768, -1098)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_van5w"]
-_data = {
-"RESET": SubResource("Animation_pk6lv"),
-"new_animation": SubResource("Animation_ebvyk")
+"values": [Vector2(1208, -1288)]
 }
 
 [sub_resource type="Animation" id="Animation_rrp71"]
@@ -8106,7 +8121,13 @@ tracks/0/keys = {
 "values": [Vector2(1208, -1288), Vector2(1208, -1816)]
 }
 
-[sub_resource type="Animation" id="Animation_ksi42"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_twpjf"]
+_data = {
+"RESET": SubResource("Animation_ksi42"),
+"new_animation": SubResource("Animation_rrp71")
+}
+
+[sub_resource type="Animation" id="Animation_ehjfx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8118,13 +8139,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1208, -1288)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_twpjf"]
-_data = {
-"RESET": SubResource("Animation_ksi42"),
-"new_animation": SubResource("Animation_rrp71")
+"values": [Vector2(1848, -1206)]
 }
 
 [sub_resource type="Animation" id="Animation_nhajs"]
@@ -8144,7 +8159,13 @@ tracks/0/keys = {
 "values": [Vector2(1848, -1206), Vector2(1848, -776)]
 }
 
-[sub_resource type="Animation" id="Animation_ehjfx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02iat"]
+_data = {
+"RESET": SubResource("Animation_ehjfx"),
+"new_animation": SubResource("Animation_nhajs")
+}
+
+[sub_resource type="Animation" id="Animation_i7sre"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8156,13 +8177,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1848, -1206)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_02iat"]
-_data = {
-"RESET": SubResource("Animation_ehjfx"),
-"new_animation": SubResource("Animation_nhajs")
+"values": [Vector2(1848, 261)]
 }
 
 [sub_resource type="Animation" id="Animation_ew4n2"]
@@ -8180,21 +8195,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1848, 261), Vector2(1848, -432)]
-}
-
-[sub_resource type="Animation" id="Animation_i7sre"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1848, 261)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x13qw"]
@@ -8287,7 +8287,7 @@ board_signature = "PS: Please get rid of these blue smoke monsters!"
 [node name="Image-elevator" parent="." instance=ExtResource("13_0arm7")]
 position = Vector2(692, 662)
 
-[node name="ColorRect" type="ColorRect" parent="Image-elevator"]
+[node name="ColorRect2" type="ColorRect" parent="Image-elevator"]
 offset_left = -12.0
 offset_top = -41.0
 offset_right = 28.0

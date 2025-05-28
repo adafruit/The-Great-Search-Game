@@ -17,3 +17,10 @@ script = ExtResource("2_wge22")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_ox0vs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -41.0
+offset_right = 28.0
+offset_bottom = -1.0
+scale = Vector2(0.622543, 0.199931)

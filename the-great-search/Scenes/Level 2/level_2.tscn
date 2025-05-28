@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://c5v3tcvi86un8"]
+[gd_scene load_steps=39 format=4 uid="uid://c5v3tcvi86un8"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_5xknq"]
 [ext_resource type="Texture2D" uid="uid://dgnthrtgom1wm" path="res://Assests/Tiles/spritesheet.png" id="1_283kh"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040/Feather RP2040-collectible.tscn" id="23_i27tk"]
 [ext_resource type="PackedScene" uid="uid://cw3vul18aogpx" path="res://Scenes/Apt Scene/transitionStreetToLobby.tscn" id="24_d4bdj"]
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="25_y7x4a"]
+[ext_resource type="PackedScene" path="res://Assests/required_transition.tscn" id="27_x3j1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqu6c"]
 texture = ExtResource("1_283kh")
@@ -11995,7 +11996,7 @@ tile_set = SubResource("TileSet_x4txd")
 [node name="Image-elevator" parent="." instance=ExtResource("19_wsin8")]
 position = Vector2(568, -56)
 
-[node name="ColorRect" type="ColorRect" parent="Image-elevator"]
+[node name="ColorRect2" type="ColorRect" parent="Image-elevator"]
 offset_left = -12.0
 offset_top = -41.0
 offset_right = 28.0
@@ -12130,7 +12131,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="SceneTransition" parent="." instance=ExtResource("24_d4bdj")]
-position = Vector2(568, -48)
+position = Vector2(520, -224)
 collision_layer = 2
 collision_mask = 2
 load_level = "res://Scenes/Level 1-Factory 1.tscn"
@@ -12182,3 +12183,12 @@ scale = Vector2(-0.839911, 1.37232)
 [node name="Respawn Zone13" parent="." instance=ExtResource("25_y7x4a")]
 position = Vector2(1376, -1208)
 scale = Vector2(-0.839911, 1.37232)
+
+[node name="Transition Scene" parent="." instance=ExtResource("27_x3j1r")]
+position = Vector2(568, -48)
+scale = Vector2(3.08777, 3.03052)
+collision_layer = 0
+collision_mask = 9
+target_scene = "res://Scenes/Level 2/level_2.tscn"
+neopixels_required = 10
+sparkys_required = 6

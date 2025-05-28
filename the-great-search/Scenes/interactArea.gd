@@ -6,6 +6,7 @@ class_name InteractionArea
 @export var message_title: String = "Message"  # Title for the message
 @export var message_body: String = "Text content goes here"  # Main message content
 @export var message_secondary: String = ""  # Optional secondary text
+@onready var color_rect: ColorRect = $"../ColorRect"
 
 var interact: Callable = func(): pass
 
