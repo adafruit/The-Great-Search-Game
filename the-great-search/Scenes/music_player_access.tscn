@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn8ypbvt8cjg4"]
+[gd_scene load_steps=6 format=3 uid="uid://bn8ypbvt8cjg4"]
 
 [ext_resource type="Script" path="res://Scenes/music_player_access.gd" id="1_t7v1u"]
 [ext_resource type="Script" path="res://Scenes/interactArea.gd" id="2_4u8cw"]
+[ext_resource type="Texture2D" uid="uid://dnq4n1w5vwgia" path="res://Assests/Music player/image-jukebox.png" id="3_ahxjb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mujy"]
 radius = 100.0
@@ -35,14 +36,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -80.0
-offset_right = 60.0
-offset_bottom = -50.0
+offset_left = -128.0
+offset_top = -232.0
+offset_right = -6.0
+offset_bottom = -202.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.11911, 2.11911)
 theme_override_styles/normal = SubResource("StyleBoxFlat_wjixr")
-text = "[S] Music Player"
+text = "[S] Play Music 
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,3 +58,8 @@ action_name = "access music player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_0mujy")
+
+[node name="Image-jukebox" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 1.90735e-06)
+scale = Vector2(0.217481, 0.217481)
+texture = ExtResource("3_ahxjb")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://c5v3tcvi86un8"]
+[gd_scene load_steps=40 format=4 uid="uid://c5v3tcvi86un8"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_5xknq"]
 [ext_resource type="Texture2D" uid="uid://dgnthrtgom1wm" path="res://Assests/Tiles/spritesheet.png" id="1_283kh"]
@@ -25,8 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://bcvyxglr6ie8a" path="res://Assests/Collectible/CPB/CPB-collectible.tscn" id="22_3awno"]
 [ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040/Feather RP2040-collectible.tscn" id="23_i27tk"]
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="25_y7x4a"]
-[ext_resource type="PackedScene" path="res://Scenes/music_player_access.tscn" id="27_igkoq"]
+[ext_resource type="PackedScene" uid="uid://bn8ypbvt8cjg4" path="res://Scenes/music_player_access.tscn" id="27_igkoq"]
 [ext_resource type="PackedScene" uid="uid://dop3xvj7y63" path="res://required_transition.tscn" id="27_wdoj1"]
+[ext_resource type="PackedScene" uid="uid://1p88rtgwmsui" path="res://Assests/Killzone.tscn" id="28_3ckhx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqu6c"]
 texture = ExtResource("1_283kh")
@@ -12009,6 +12010,11 @@ offset_bottom = -1.0
 scale = Vector2(0.611582, 0.225342)
 color = Color(1, 0, 0, 1)
 
+[node name="MusicPlayerAccess" parent="." instance=ExtResource("27_igkoq")]
+position = Vector2(280, -40)
+scale = Vector2(0.273402, 0.273402)
+collision_mask = 9
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_ps76s")]
 position = Vector2(48, 240)
 
@@ -12046,6 +12052,7 @@ collision_mask = 2
 position = Vector2(1464, 296)
 rotation = 1.57379
 scale = Vector2(1, 2.27975)
+collision_mask = 9
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 modulate = Color(0.188235, 0.360784, 1, 0.454902)
@@ -12144,7 +12151,7 @@ position = Vector2(728, 272)
 scale = Vector2(-0.839911, 1.37232)
 
 [node name="Respawn Zone4" parent="." instance=ExtResource("25_y7x4a")]
-position = Vector2(1272, 216)
+position = Vector2(1312, 216)
 scale = Vector2(-0.839911, 1.37232)
 
 [node name="Respawn Zone5" parent="." instance=ExtResource("25_y7x4a")]
@@ -12192,6 +12199,12 @@ target_scene = "res://Scenes/Level_4.tscn"
 sparkys_required = 9
 key_collectibles_required = 3
 
-[node name="MusicPlayerAccess" parent="." instance=ExtResource("27_igkoq")]
-position = Vector2(320, -120)
-collision_mask = 9
+[node name="Area2D2" parent="." instance=ExtResource("28_3ckhx")]
+position = Vector2(448, 336)
+rotation = -1.57308
+scale = Vector2(0.721805, 1.52426)
+
+[node name="Area2D3" parent="." instance=ExtResource("28_3ckhx")]
+position = Vector2(976, 336)
+rotation = -1.57308
+scale = Vector2(0.721805, 2.92352)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://djiileg1v7swp"]
+
+[ext_resource type="PackedScene" uid="uid://gwrircurl2m8" path="res://Scenes/GameplayMenu.tscn" id="1_c1vsd"]
+
+[node name="More levels coming soon" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Gameplay Menu" parent="CanvasLayer" instance=ExtResource("1_c1vsd")]
