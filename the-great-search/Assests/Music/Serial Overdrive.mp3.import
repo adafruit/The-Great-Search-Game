@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcba4sqs4uhva"
+path="res://.godot/imported/Serial Overdrive.mp3-f3583f12150b8385dc0e5754edfa08bb.mp3str"
+
+[deps]
+
+source_file="res://Assests/Music/Serial Overdrive.mp3"
+dest_files=["res://.godot/imported/Serial Overdrive.mp3-f3583f12150b8385dc0e5754edfa08bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

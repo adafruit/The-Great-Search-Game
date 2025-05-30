@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfy4uo8y0oxwl"]
+
+[ext_resource type="Script" path="res://Scenes/UI/music_track_button.gd" id="1_h1xhf"]
+
+[node name="MusicTrackButton" type="Button"]
+custom_minimum_size = Vector2(0, 35)
+offset_right = 300.0
+offset_bottom = 35.0
+alignment = 0
+script = ExtResource("1_h1xhf")

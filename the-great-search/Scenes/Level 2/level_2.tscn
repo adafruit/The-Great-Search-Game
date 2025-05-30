@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://41nt62ras272" path="res://Scenes/improvedPlat.tscn" id="7_nwwf1"]
 [ext_resource type="PackedScene" uid="uid://1x8ccmgwxs02" path="res://Assests/Collectible/BME280/BME280-collectible.tscn" id="8_07yxj"]
 [ext_resource type="PackedScene" uid="uid://cr27txwm78jpn" path="res://Scenes/lightingRay.tscn" id="9_jyqre"]
-[ext_resource type="AudioStream" uid="uid://baibllay1dyu8" path="res://Assests/SFX/level_music_250430_v12.mp3" id="10_ldnuf"]
 [ext_resource type="PackedScene" uid="uid://cdmdv6441vngl" path="res://Scenes/mainGUI.tscn" id="11_ssl4t"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="12_o2dj7"]
+[ext_resource type="AudioStream" uid="uid://bcba4sqs4uhva" path="res://Assests/Music/Serial Overdrive.mp3" id="13_d5u78"]
 [ext_resource type="Shader" path="res://Assests/Shaders/joystickMaterial.gdshader" id="13_lp1ah"]
 [ext_resource type="Texture2D" uid="uid://d2y0c5lut4dal" path="res://addons/virtual_joystick/textures/redButton2.png" id="14_nxynl"]
 [ext_resource type="PackedScene" uid="uid://cemq5rquhls4g" path="res://Scenes/DialogueView.tscn" id="15_peia8"]
@@ -24,9 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://dliim1q8pgj5h" path="res://Assests/Collectible/Metro2040/metro_2040.tscn" id="21_er8gc"]
 [ext_resource type="PackedScene" uid="uid://bcvyxglr6ie8a" path="res://Assests/Collectible/CPB/CPB-collectible.tscn" id="22_3awno"]
 [ext_resource type="PackedScene" uid="uid://lysykbkaphc0" path="res://Assests/Collectible/Feather RP2040/Feather RP2040-collectible.tscn" id="23_i27tk"]
-[ext_resource type="PackedScene" uid="uid://cw3vul18aogpx" path="res://Scenes/Apt Scene/transitionStreetToLobby.tscn" id="24_d4bdj"]
 [ext_resource type="PackedScene" uid="uid://cchwdu6a5021i" path="res://Scenes/respawn_zone.tscn" id="25_y7x4a"]
-[ext_resource type="PackedScene" uid="uid://c4x4kdeojnmfm" path="res://Assests/required_transition.tscn" id="27_x3j1r"]
+[ext_resource type="PackedScene" path="res://Scenes/music_player_access.tscn" id="27_igkoq"]
+[ext_resource type="PackedScene" uid="uid://dop3xvj7y63" path="res://required_transition.tscn" id="27_wdoj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqu6c"]
 texture = ExtResource("1_283kh")
@@ -11984,6 +11984,11 @@ tile_set = SubResource("TileSet_oivrk")
 position = Vector2(472, -48)
 collision_layer = 2
 collision_mask = 2
+check_sparkys = true
+check_key_collectibles = true
+sparkys_searching_threshold = 0
+sparkys_loading_threshold = 0
+sparkys_found_threshold = 3
 
 [node name="Header Spike Layer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("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")
@@ -12055,7 +12060,7 @@ tile_map_data = PackedByteArray("AAAvABAAAAAzAC0AAAAvABEAAAAzAC4AAAAvABIAAAAzAC8
 tile_set = SubResource("TileSet_8updv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_ldnuf")
+stream = ExtResource("13_d5u78")
 autoplay = true
 
 [node name="GUI" parent="." instance=ExtResource("11_ssl4t")]
@@ -12130,12 +12135,6 @@ scale = Vector2(2.26419, 2.26419)
 collision_layer = 2
 collision_mask = 2
 
-[node name="SceneTransition" parent="." instance=ExtResource("24_d4bdj")]
-position = Vector2(568, -64)
-collision_layer = 2
-collision_mask = 2
-load_level = "res://Scenes/Level 1-Factory 1.tscn"
-
 [node name="Respawn Zone2" parent="." instance=ExtResource("25_y7x4a")]
 position = Vector2(48.0001, 224)
 scale = Vector2(-0.839911, 1.37232)
@@ -12184,12 +12183,15 @@ scale = Vector2(-0.839911, 1.37232)
 position = Vector2(1376, -1208)
 scale = Vector2(-0.839911, 1.37232)
 
-[node name="Transition Scene" parent="." instance=ExtResource("27_x3j1r")]
-visible = false
+[node name="RequiredTransition" parent="." instance=ExtResource("27_wdoj1")]
 position = Vector2(568, -48)
-scale = Vector2(3.08777, 3.03052)
+scale = Vector2(2.68, 3.2)
 collision_layer = 0
 collision_mask = 9
-target_scene = "res://Scenes/Level 2/level_2.tscn"
-neopixels_required = 10
-sparkys_required = 6
+target_scene = "res://Scenes/Level_4.tscn"
+sparkys_required = 9
+key_collectibles_required = 3
+
+[node name="MusicPlayerAccess" parent="." instance=ExtResource("27_igkoq")]
+position = Vector2(320, -120)
+collision_mask = 9

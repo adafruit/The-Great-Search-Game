@@ -34,6 +34,12 @@ func change_scene(target_scene: String) -> void:
 	# Delay
 	await get_tree().create_timer(transition_delay).timeout
 	
+	# Notify MusicManager about scene change if it exists
+	if has_node("/root/MusicManager"):
+		var music_manager = get_node("/root/MusicManager")
+		if music_manager.has_method("reset_scene_music_reference"):
+			music_manager.reset_scene_music_reference()
+	
 	# Change scene
 	get_tree().change_scene_to_file(target_scene)
 	

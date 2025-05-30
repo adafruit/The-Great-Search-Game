@@ -26,7 +26,7 @@ func _ready() -> void:
 	var dialogue_view = get_tree().get_first_node_in_group("dialogue_view")
 	if dialogue_view:
 		dialogue_view.show_dialogue(
-			"Blue Smoke Rumble!", 
+			"15 Steps into the Static Fog", 
 			"Eliminate 6 Blue Smoke Monsters",
 			"They’re mostly harmless — but incredibly invasive!"
 		)

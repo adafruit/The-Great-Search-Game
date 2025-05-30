@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://clnaiu1lmpr7o"]
+[gd_scene load_steps=45 format=4 uid="uid://clnaiu1lmpr7o"]
 
 [ext_resource type="Script" path="res://Scenes/improved_room_camera.gd" id="1_2mgiy"]
 [ext_resource type="Script" path="res://Scenes/level_4.gd" id="1_6h844"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cl1vo7up1kajq" path="res://Scenes/flying_enemy.tscn" id="15_6e1w2"]
 [ext_resource type="PackedScene" uid="uid://ck0tq2c0i0n81" path="res://Assests/Ceiling Sentry/tesla_sentry_1.tscn" id="17_bmxtw"]
 [ext_resource type="PackedScene" uid="uid://dfgceqrapoaga" path="res://Assests/Ceiling Sentry/animated_spark_1.tscn" id="18_edx3h"]
+[ext_resource type="AudioStream" uid="uid://bidx8vhbpl8yo" path="res://Assests/Music/NeoPixel Fever.mp3" id="20_ax5h5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwefm"]
 texture = ExtResource("2_cpogf")
@@ -8447,3 +8448,7 @@ libraries = {
 "": SubResource("AnimationLibrary_eefwb")
 }
 autoplay = "Movment"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_ax5h5")
+autoplay = true

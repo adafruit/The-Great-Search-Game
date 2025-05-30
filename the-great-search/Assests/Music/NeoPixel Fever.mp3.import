@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bidx8vhbpl8yo"
+path="res://.godot/imported/NeoPixel Fever.mp3-e951cec8d6c5ccb8b8cabb025bbeef88.mp3str"
+
+[deps]
+
+source_file="res://Assests/Music/NeoPixel Fever.mp3"
+dest_files=["res://.godot/imported/NeoPixel Fever.mp3-e951cec8d6c5ccb8b8cabb025bbeef88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
